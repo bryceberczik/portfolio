@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useAnimate, motion } from "framer-motion";
-import { FiMenu, FiArrowUpRight } from "react-icons/fi";
+import { FiArrowUpRight } from "react-icons/fi";
 import useMeasure from "react-use-measure";
 import ButtonWrapper from "./HeaderButton";
+import { Spin as Hamburger } from 'hamburger-react'
 
 const Example = () => {
   return <GlassNavigation />
@@ -12,31 +13,8 @@ const GlassNavigation = () => {
   const [hovered, setHovered] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const [scope, animate] = useAnimate();
+  const [scope] = useAnimate();
   const navRef = useRef(null);
-
-  const handleMouseMove = ({ offsetX, offsetY, target }) => {
-    // @ts-ignore
-    const isNavElement = [...target.classList].includes("glass-nav");
-
-    if (isNavElement) {
-      setHovered(true);
-
-      const top = offsetY + "px";
-      const left = offsetX + "px";
-
-      animate(scope.current, { top, left }, { duration: 0 });
-    } else {
-      setHovered(false);
-    }
-  };
-
-  useEffect(() => {
-    navRef.current?.addEventListener("mousemove", handleMouseMove);
-
-    return () =>
-      navRef.current?.removeEventListener("mousemove", handleMouseMove);
-  }, []);
 
   return (
     <nav
@@ -62,7 +40,7 @@ const GlassNavigation = () => {
   );
 };
 
-const Cursor = ({ hovered, scope }) => {
+const Cursor = ({ hovered, scope }: any) => {
   return (
     <motion.span
       initial={false}
@@ -89,13 +67,13 @@ const Logo = () => (
 
 const Links = () => (
   <div className="hidden items-center gap-2 md:flex">
-    <GlassLink text="Products" />
-    <GlassLink text="History" />
-    <GlassLink text="Contact" />
+    <GlassLink text="About" />
+    <GlassLink text="Projects" />
+    <GlassLink text="Skills" />
   </div>
 );
 
-const GlassLink = ({ text }) => {
+const GlassLink = ({ text }: any) => {
   return (
     <a
       href="#"
@@ -109,43 +87,30 @@ const GlassLink = ({ text }) => {
   );
 };
 
-const TextLink = ({ text }) => {
-  return (
-    <a href="#" className="text-white/90 transition-colors hover:text-white">
-      {text}
-    </a>
-  );
-};
-
-const Buttons = ({ setMenuOpen }) => (
+const Buttons = ({ setMenuOpen }: any) => (
   <div className="flex items-center gap-4">
     <div className="hidden md:block">
-      <SignInButton />
+      <ContactButton />
     </div>
 
     <ButtonWrapper />
 
-    <button
-      onClick={() => setMenuOpen((pv) => !pv)}
-      className="ml-2 block scale-100 text-3xl text-white/90 transition-all hover:scale-105 hover:text-white active:scale-95 md:hidden"
-    >
-      <FiMenu />
-    </button>
+    <Hamburger color="white" onToggle={setMenuOpen} />
   </div>
 );
 
-const SignInButton = () => {
+const ContactButton = () => {
   return (
     <button className="group relative scale-100 overflow-hidden rounded-lg px-4 py-2 transition-transform hover:scale-105 active:scale-95">
       <span className="relative z-10 text-white/90 transition-colors group-hover:text-white">
-        Sign in
+        Contact
       </span>
       <span className="absolute inset-0 z-0 bg-gradient-to-br from-white/20 to-white/5 opacity-0 transition-opacity group-hover:opacity-100" />
     </button>
   );
 };
 
-const MobileMenu = ({ menuOpen }) => {
+const MobileMenu = ({ menuOpen }: any) => {
   const [ref, { height }] = useMeasure();
   return (
     <motion.div
@@ -155,13 +120,13 @@ const MobileMenu = ({ menuOpen }) => {
       }}
       className="block overflow-hidden md:hidden"
     >
-      <div ref={ref} className="flex items-center justify-between px-4 pb-4">
-        <div className="flex items-center gap-4">
-          <TextLink text="Products" />
-          <TextLink text="History" />
-          <TextLink text="Contact" />
+      <div ref={ref} className="flex items-center justify-between px-2 pb-4">
+        <div className="flex items-center gap-1">
+        <GlassLink text="About" />
+        <GlassLink text="Projects" />
+        <GlassLink text="Skills" />
         </div>
-        <SignInButton />
+        <ContactButton />
       </div>
     </motion.div>
   );
