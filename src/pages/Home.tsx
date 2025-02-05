@@ -1,7 +1,7 @@
 import AboutCard from "../components/AboutCard";
 import ProfilePic from "../images/IMG_0240.jpg";
 import { faUser, faHeart, faLightbulb } from "@fortawesome/free-regular-svg-icons";
-
+import ShuffleCards from "../components/ShuffleCards";
 const Home = () => {
   return (
     <div className="h-screen flex flex-col items-center">
@@ -25,6 +25,7 @@ const Home = () => {
         <AboutCard icon={faUser} heading="About Me" description="A young junior full-stack software engineer passionate about bringing ideas to life through code. I specialize in React, TypeScript, and Tailwind on the frontend, with Node.js handling the backend. Experienced in both SQL and NoSQL databases, primarily using Prisma with PostgreSQL (PERN stack), but also proficient in the MERN stack and other technologies." />
         <AboutCard icon={faHeart} heading="Passion" description="I've always been fascinated by computers and technology, and my curiosity led me to explore software development. In 2024, I took a coding bootcamp to turn that passion into a skill, and I instantly fell in love with the process. Now, I focus on building beautiful, fast, and efficient applications that deliver great user experiences." />
         <AboutCard icon={faLightbulb} heading="Problem Solving" description="I thrive on problem-solving and the challenge of turning complex issues into seamless solutions. Whether it's debugging code, optimizing performance, or designing scalable architectures, I enjoy breaking down problems and finding the most efficient way to solve them. Software development allows me to continuously learn, adapt, and create solutions that make a real impact." />
+        <ShuffleCards />
       </div>
     </div>
   );
