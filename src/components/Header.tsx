@@ -95,7 +95,7 @@ const Buttons = ({ setMenuOpen }: any) => (
 
     <ButtonWrapper />
 
-    <Hamburger color="white" onToggle={setMenuOpen} />
+    <Hamburger rounded color="white" onToggle={setMenuOpen} />
   </div>
 );
 
