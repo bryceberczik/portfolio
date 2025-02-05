@@ -17,6 +17,10 @@ const Home = () => {
           Focused on building impactful apps and mastering new technologies.
         </p>
       </div>
+
+      <div id="about" className="w-full text-center mt-[100px]">
+        <h1 className="">About</h1>
+      </div>
     </div>
   );
 };

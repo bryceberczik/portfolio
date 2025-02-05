@@ -6,7 +6,7 @@ const ButtonWrapper = () => {
     return (
       <div className="group relative w-fit transition-transform duration-300 active:scale-95">
         <button className="relative z-10 rounded-lg bg-gradient-to-br from-indigo-500 to-fuchsia-500 p-0.5 duration-300 group-hover:scale-110">
-          <span className="block rounded-md px-3 py-1 font-semibold text-slate-100 duration-300 group-hover:bg-slate-950/50 group-hover:text-slate-50 group-active:bg-slate-950/80">
+          <span className="block rounded-md px-3 py-1 text-slate-100 duration-300 group-hover:bg-slate-950/50 group-hover:text-slate-50 group-active:bg-slate-950/80">
             Let's Chat
           </span>
         </button>
