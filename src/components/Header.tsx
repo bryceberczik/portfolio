@@ -60,23 +60,23 @@ const Cursor = ({ hovered, scope }: any) => {
 };
 
 const Logo = () => (
-  <span className="pointer-events-none relative left-0 top-[50%] z-10 text-2xl font-black text-white mix-blend-overlay md:absolute md:left-[50%] md:-translate-x-[50%] md:-translate-y-[50%]">
+  <span className="pointer-events-none relative left-0 top-[50%] z-10 text-2xl text-white mix-blend-overlay md:absolute md:left-[50%] md:-translate-x-[50%] md:-translate-y-[50%]">
     Bryce Berczik
   </span>
 );
 
 const Links = () => (
   <div className="hidden items-center gap-2 md:flex">
-    <GlassLink text="About" />
+    <GlassLink id="about" text="About" />
     <GlassLink text="Projects" />
     <GlassLink text="Skills" />
   </div>
 );
 
-const GlassLink = ({ text }: any) => {
+const GlassLink = ({ text, id }: any) => {
   return (
     <a
-      href="#"
+      href={`#${id}`}
       className="group relative scale-100 overflow-hidden rounded-lg px-4 py-2 transition-transform hover:scale-105 active:scale-95"
     >
       <span className="relative z-10 text-white/90 transition-colors group-hover:text-white">
@@ -95,7 +95,7 @@ const Buttons = ({ setMenuOpen }: any) => (
 
     <ButtonWrapper />
 
-    <Hamburger color="white" onToggle={setMenuOpen} />
+    <Hamburger rounded color="white" onToggle={setMenuOpen} />
   </div>
 );
 
@@ -122,7 +122,7 @@ const MobileMenu = ({ menuOpen }: any) => {
     >
       <div ref={ref} className="flex items-center justify-between px-2 pb-4">
         <div className="flex items-center gap-1">
-        <GlassLink text="About" />
+        <GlassLink id="about" text="About" />
         <GlassLink text="Projects" />
         <GlassLink text="Skills" />
         </div>
