@@ -4,7 +4,6 @@ import { faUser, faHeart, faLightbulb } from "@fortawesome/free-regular-svg-icon
 import MobileShuffleCards from "../components/MobileShuffleCards";
 import ShuffleCards from "../components/ShuffleCards";
 import { useState, useEffect } from "react";
-import { Shuffle } from "lucide-react";
 
 const Home = () => {
 
