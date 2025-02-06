@@ -1,8 +1,10 @@
 import AboutCard from "../components/AboutCard";
 import ProfilePic from "../images/IMG_0240.jpg";
 import { faUser, faHeart, faLightbulb } from "@fortawesome/free-regular-svg-icons";
+import MobileShuffleCards from "../components/MobileShuffleCards";
 import ShuffleCards from "../components/ShuffleCards";
 import { useState, useEffect } from "react";
+import { Shuffle } from "lucide-react";
 
 const Home = () => {
 
@@ -37,11 +39,10 @@ const Home = () => {
         <AboutCard icon={faHeart} heading="Passion" description="I've always been fascinated by computers and technology, and my curiosity led me to explore software development. In 2024, I took a coding bootcamp to turn that passion into a skill, and I instantly fell in love with the process. Now, I focus on building beautiful, fast, and efficient applications that deliver great user experiences." />
         <AboutCard icon={faLightbulb} heading="Problem Solving" description="I thrive on problem-solving and the challenge of turning complex issues into seamless solutions. Whether it's debugging code, optimizing performance, or designing scalable architectures, I enjoy breaking down problems and finding the most efficient way to solve them. Software development allows me to continuously learn, adapt, and create solutions that make a real impact." />
         {isMobile ? (
-            <div></div>
-        ): (
+          <MobileShuffleCards />
+        ) : (
           <ShuffleCards />
         )}
-        
       </div>
     </div>
   );
