@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import { ICard } from "../interfaces/interfaces";
+import zander from "../images/zander.jpeg";
+import moe from "../images/moe.jpeg";
+import rolando from "../images/rolando.jpeg";
 
 const ShuffleCards = () => {
   const [order, setOrder] = useState(["front", "middle", "back"]);
@@ -18,23 +21,23 @@ const ShuffleCards = () => {
     <div className="grid place-content-center overflow-hidden px-8 py-24 text-slate-50">
       <div className="relative -ml-[100px] h-[450px] w-[350px] md:-ml-[175px]">
         <Card
-          imgUrl="/imgs/head-shots/7.jpg"
-          testimonial="I feel like I've learned as much from X as I did completing my masters. It's the first thing I read every morning."
-          author="Jenn F. - Marketing Director @ Square"
+          imgUrl={zander}
+          testimonial="After working with Bryce on multiple projects, I’ve been impressed by his skill, reliability, and dedication. He’s a great problem-solver and a valuable team player!"
+          author="Zander K. - Software Engineer @ Coding Bootcamp"
           handleShuffle={handleShuffle}
           position={order[0]}
         />
         <Card
-          imgUrl="/imgs/head-shots/8.jpg"
-          testimonial="My boss thinks I know what I'm doing. Honestly, I just read this newsletter."
-          author="Adrian Y. - Product Marketing @ Meta"
+          imgUrl={moe}
+          testimonial="Can not believe this is free. If X was $5,000 a month, it would be worth every penny. I plan to name my next child after X."
+          author="Moaaied B. - Software Engineer @ Virgin Med"
           handleShuffle={handleShuffle}
           position={order[1]}
         />
         <Card
-          imgUrl="/imgs/head-shots/9.jpg"
+          imgUrl={rolando}
           testimonial="Can not believe this is free. If X was $5,000 a month, it would be worth every penny. I plan to name my next child after X."
-          author="Devin R. - Growth Marketing Lead @ OpenAI"
+          author="Rolando M. - Business Analyst @ U-Hual"
           handleShuffle={handleShuffle}
           position={order[2]}
         />
@@ -43,7 +46,13 @@ const ShuffleCards = () => {
   );
 };
 
-const Card = ({ handleShuffle, testimonial, position, imgUrl, author }: ICard) => {
+const Card = ({
+  handleShuffle,
+  testimonial,
+  position,
+  imgUrl,
+  author,
+}: ICard) => {
   const mousePosRef = useRef(0);
 
   const onDragStart = (e: any) => {
