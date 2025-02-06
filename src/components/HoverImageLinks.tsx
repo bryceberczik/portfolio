@@ -1,34 +1,37 @@
 import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { FiArrowRight } from "react-icons/fi";
-import zander from "../images/image.jpg"
+import stellabyte from "../images/stellabyte.png";
+import digbiai from "../images/digbi.png";
+import pronx from "../images/pronx.png";
+import codebounty from "../images/codebounty.png";
 
 export const HoverImageLinks = () => {
   return (
     <section className="p-4 md:p-8">
       <div className="mx-auto max-w-5xl">
         <Link
-          heading="About"
-          subheading="Learn what we do here"
-          imgSrc={zander}
+          heading="Stellabyte"
+          subheading="Cloud storage with a cosmic twist using AWS"
+          imgSrc={stellabyte}
           href="#"
         />
         <Link
-          heading="Projects"
-          subheading="We work with great people"
-          imgSrc="/imgs/random/6.jpg"
+          heading="Digbi AI"
+          subheading="AI Chatbot that finds patterns in JSON data"
+          imgSrc={digbiai}
           href="#"
         />
         <Link
-          heading="Skills"
-          subheading="Our work speaks for itself"
-          imgSrc="/imgs/random/4.jpg"
+          heading="pronx."
+          subheading="A productivity tool and motivational app"
+          imgSrc={pronx}
           href="#"
         />
         <Link
-          heading="Contact"
-          subheading="We want cool people"
-          imgSrc="/imgs/random/5.jpg"
+          heading="codeBounty"
+          subheading="Freelance development app for web developers"
+          imgSrc={codebounty}
           href="#"
         />
       </div>
@@ -85,7 +88,7 @@ const Link = ({ heading, imgSrc, subheading, href }: any) => {
             staggerChildren: 0.075,
             delayChildren: 0.25,
           }}
-          className="relative z-10 block text-4xl font-bold text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50 md:text-6xl"
+          className="relative z-10 flex text-4xl font-bold text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50 md:text-6xl"
         >
           {heading.split("").map((l: any, i: any) => (
             <motion.span
@@ -101,7 +104,7 @@ const Link = ({ heading, imgSrc, subheading, href }: any) => {
             </motion.span>
           ))}
         </motion.span>
-        <span className="relative z-10 mt-2 block text-base text-white transition-colors duration-500 group-hover:text-neutral-50">
+        <span className="relative z-10 mt-4 block text-base text-white transition-colors duration-500 group-hover:text-neutral-50">
           {subheading}
         </span>
       </div>
