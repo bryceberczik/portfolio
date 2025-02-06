@@ -29,14 +29,14 @@ const ShuffleCards = () => {
         />
         <Card
           imgUrl={moe}
-          testimonial="Can not believe this is free. If X was $5,000 a month, it would be worth every penny. I plan to name my next child after X."
+          testimonial="It was a privilege working with Bryce on a project. His technical skills and problem-solving abilities stood out, and he delivered excellent results with great attention to detail."
           author="Moaaied B. - Software Engineer @ Virgin Med"
           handleShuffle={handleShuffle}
           position={order[1]}
         />
         <Card
           imgUrl={rolando}
-          testimonial="Can not believe this is free. If X was $5,000 a month, it would be worth every penny. I plan to name my next child after X."
+          testimonial="Working with Bryce was a great experience. His strong work ethic, commitment, and focus on quality really stood out. He consistently delivered on time and exceeded expectations."
           author="Rolando M. - Business Analyst @ U-Hual"
           handleShuffle={handleShuffle}
           position={order[2]}
