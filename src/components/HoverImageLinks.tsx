@@ -14,25 +14,25 @@ export const HoverImageLinks = () => {
           heading="Stellabyte"
           subheading="Cloud storage with a cosmic twist using AWS"
           imgSrc={stellabyte}
-          href="#"
+          href="https://stellabyte-production.up.railway.app"
         />
         <Link
           heading="Digbi AI"
           subheading="AI Chatbot that finds patterns in JSON data"
           imgSrc={digbiai}
-          href="#"
+          href="https://digbiai.com"
         />
         <Link
           heading="pronx."
           subheading="A productivity tool and motivational app"
           imgSrc={pronx}
-          href="#"
+          href="https://pronx-p203.onrender.com"
         />
         <Link
           heading="codeBounty"
           subheading="Freelance development app for web developers"
           imgSrc={codebounty}
-          href="#"
+          href="https://codebounty.onrender.com/"
         />
       </div>
     </section>
@@ -75,6 +75,8 @@ const Link = ({ heading, imgSrc, subheading, href }: any) => {
       onMouseMove={handleMouseMove}
       initial="initial"
       whileHover="whileHover"
+      target="_blank"
+      rel="noopener noreferrer"
       className="group relative flex items-center justify-between border-b-2 border-white py-4 transition-colors duration-500 hover:border-neutral-50 md:py-8"
     >
       <div>
