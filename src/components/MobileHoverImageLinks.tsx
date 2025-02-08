@@ -1,5 +1,3 @@
-import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
-import { useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import stellabyte from "../images/stellabyte.png";
@@ -16,119 +14,64 @@ export const MobileHoverImageLinks = () => {
           subheading="Cloud storage with a cosmic twist using AWS"
           imgSrc={stellabyte}
           href="https://stellabyte-production.up.railway.app"
+          link="https://github.com/ZVKubajak/Stellabyte"
         />
         <Link
           heading="Digbi AI"
           subheading="AI Chatbot that finds patterns in JSON data"
           imgSrc={digbiai}
           href="https://digbiai.com"
+          link="https://github.com/bryceberczik/Digbi-AI"
         />
         <Link
           heading="pronx."
           subheading="A productivity tool and motivational app"
           imgSrc={pronx}
           href="https://pronx-p203.onrender.com"
+          link="https://github.com/bryceberczik/pronx"
         />
         <Link
           heading="codeBounty"
           subheading="Freelance development app for web developers"
           imgSrc={codebounty}
           href="https://codebounty.onrender.com/"
+          link="https://github.com/bryceberczik/codeBounty"
         />
       </div>
     </section>
   );
 };
 
-const Link = ({ heading, imgSrc, subheading, href }: any) => {
-  const ref = useRef<HTMLAnchorElement>(null);
-
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const mouseXSpring = useSpring(x);
-  const mouseYSpring = useSpring(y);
-
-  const top = useTransform(mouseYSpring, [0.5, -0.5], ["40%", "60%"]);
-  const left = useTransform(mouseXSpring, [0.5, -0.5], ["60%", "70%"]);
-
-  const handleMouseMove = (e: any) => {
-    if (!ref.current) return;
-    const rect = ref.current.getBoundingClientRect();
-
-    const width = rect.width;
-    const height = rect.height;
-
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-
-    const xPct = mouseX / width - 0.5;
-    const yPct = mouseY / height - 0.5;
-
-    x.set(xPct);
-    y.set(yPct);
-  };
-
+const Link = ({ heading, subheading, href, link }: any) => {
   return (
-    <motion.a
+    <a
       href={href}
-      ref={ref}
-      onMouseMove={handleMouseMove}
-      initial="initial"
-      whileHover="whileHover"
       target="_blank"
       rel="noopener noreferrer"
       className="group relative flex items-center justify-between border-b-2 border-white py-4 transition-colors duration-500 hover:border-neutral-50 md:py-8"
     >
       <div>
-        <motion.span
-          variants={{
-            initial: { x: 0 },
-            whileHover: { x: -16 },
-          }}
-          transition={{
-            type: "spring",
-            staggerChildren: 0.075,
-            delayChildren: 0.25,
-          }}
-          className="relative z-10 flex text-4xl font-bold text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50 md:text-6xl"
+        <span
+          className="relative z-10 flex text-4xl items-center gap-5 font-bold text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50 md:text-6xl"
         >
-          {heading.split("").map((l: any, i: any) => (
-            <motion.span
-              variants={{
-                initial: { x: 0 },
-                whileHover: { x: 16 },
-              }}
-              transition={{ type: "spring" }}
-              className="inline-block text-white"
-              key={i}
-            >
-              {l}
-            </motion.span>
-          ))}
-          <FontAwesomeIcon icon={faGithub} />
-        </motion.span>
+            <div>
+            {heading.split("").map((l: any, i: any) => (
+              <span
+                className="inline-block text-white"
+                key={i}
+              >
+                {l}
+              </span>
+            ))}
+            </div>
+            <div className="px-3 pb-1" onClick={() => window.open(link, "_blank", "noopener,noreferrer")}>
+            <FontAwesomeIcon className="text-white text-2xl" icon={faGithub} />
+            </div>
+        </span>
         <span className="relative z-10 mt-4 block text-sm text-left text-white transition-colors duration-500 group-hover:text-neutral-50">
           {subheading}
         </span>
       </div>
-
-      <motion.img
-        style={{
-          top,
-          left,
-          translateX: "-50%",
-          translateY: "-50%",
-        }}
-        variants={{
-          initial: { scale: 0, rotate: "-12.5deg" },
-          whileHover: { scale: 1, rotate: "12.5deg" },
-        }}
-        transition={{ type: "spring" }}
-        src={imgSrc}
-        className="absolute z-0 h-24 w-32 rounded-lg object-cover md:h-48 md:w-64"
-        alt={`Image representing a link for ${heading}`}
-      />
-    </motion.a>
+    </a>
   );
 };
