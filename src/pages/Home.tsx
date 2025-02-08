@@ -3,8 +3,9 @@ import ProfilePic from "../images/IMG_0240.jpg";
 import { faUser, faHeart, faLightbulb } from "@fortawesome/free-regular-svg-icons";
 import MobileShuffleCards from "../components/MobileShuffleCards";
 import ShuffleCards from "../components/ShuffleCards";
+import { HoverImageLinks } from "../components/HoverImageLinks";
 import { useState, useEffect } from "react";
-import { Shuffle } from "lucide-react";
+import { MobileHoverImageLinks } from "../components/MobileHoverImageLinks";
 
 const Home = () => {
 
@@ -36,12 +37,23 @@ const Home = () => {
       <div id="about" className="w-full text-center mt-[100px]">
         <h1 className="text-white font-semibold text-2xl">About</h1>
         <AboutCard icon={faUser} heading="About Me" description="A young junior full-stack software engineer passionate about bringing ideas to life through code. I specialize in React, TypeScript, and Tailwind on the frontend, with Node.js handling the backend. Experienced in both SQL and NoSQL databases, primarily using Prisma with PostgreSQL (PERN stack), but also proficient in the MERN stack and other technologies." />
-        <AboutCard icon={faHeart} heading="Passion" description="I've always been fascinated by computers and technology, and my curiosity led me to explore software development. In 2024, I took a coding bootcamp to turn that passion into a skill, and I instantly fell in love with the process. Now, I focus on building beautiful, fast, and efficient applications that deliver great user experiences." />
+        <AboutCard icon={faHeart} heading="Education" description="I attended UTSA in San Antonio, where I studied full-stack development with a focus on React and Node.js. Throughout the program, I gained hands-on experience building dynamic web applications, working with modern frameworks, and mastering backend development. I completed the program successfully, finishing strong and learning a tremendous amount along the way." />
         <AboutCard icon={faLightbulb} heading="Problem Solving" description="I thrive on problem-solving and the challenge of turning complex issues into seamless solutions. Whether it's debugging code, optimizing performance, or designing scalable architectures, I enjoy breaking down problems and finding the most efficient way to solve them. Software development allows me to continuously learn, adapt, and create solutions that make a real impact." />
         {isMobile ? (
           <MobileShuffleCards />
         ) : (
           <ShuffleCards />
+        )}
+      </div>
+
+      <div id="projects" className="w-full text-center mt-[100px]">
+        <h1 className="text-white font-semibold text-2xl">Projects</h1>
+        <p className="text-white mt-2">Some of my best work</p>
+
+        {isMobile ? (
+          <MobileHoverImageLinks />
+        ) : (
+          <HoverImageLinks />
         )}
       </div>
     </div>
