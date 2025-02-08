@@ -5,6 +5,8 @@ import stellabyte from "../images/stellabyte.png";
 import digbiai from "../images/digbi.png";
 import pronx from "../images/pronx.png";
 import codebounty from "../images/codebounty.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export const HoverImageLinks = () => {
   return (
@@ -15,31 +17,35 @@ export const HoverImageLinks = () => {
           subheading="Cloud storage with a cosmic twist using AWS"
           imgSrc={stellabyte}
           href="https://stellabyte-production.up.railway.app"
+          link="https://github.com/ZVKubajak/Stellabyte"
         />
         <Link
           heading="Digbi AI"
           subheading="AI Chatbot that finds patterns in JSON data"
           imgSrc={digbiai}
           href="https://digbiai.com"
+          link="https://github.com/bryceberczik/Digbi-AI"
         />
         <Link
           heading="pronx."
           subheading="A productivity tool and motivational app"
           imgSrc={pronx}
           href="https://pronx-p203.onrender.com"
+          link="https://github.com/bryceberczik/pronx"
         />
         <Link
           heading="codeBounty"
           subheading="Freelance development app for web developers"
           imgSrc={codebounty}
           href="https://codebounty.onrender.com/"
+          link="https://github.com/bryceberczik/codeBounty"
         />
       </div>
     </section>
   );
 };
 
-const Link = ({ heading, imgSrc, subheading, href }: any) => {
+const Link = ({ heading, imgSrc, subheading, href, link }: any) => {
   const ref = useRef<HTMLAnchorElement>(null);
 
   const x = useMotionValue(0);
@@ -90,23 +96,36 @@ const Link = ({ heading, imgSrc, subheading, href }: any) => {
             staggerChildren: 0.075,
             delayChildren: 0.25,
           }}
-          className="relative z-10 flex text-4xl font-bold text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50 md:text-6xl"
+          className="relative z-10 flex text-xl font-bold text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50 md:text-6xl"
         >
-          {heading.split("").map((l: any, i: any) => (
-            <motion.span
-              variants={{
-                initial: { x: 0 },
-                whileHover: { x: 16 },
-              }}
-              transition={{ type: "spring" }}
-              className="inline-block text-white"
-              key={i}
+          <div className="flex items-center gap-7 w-full">
+            <div className="flex">
+              {heading.split("").map((l: any, i: any) => (
+                <motion.span
+                  variants={{
+                    initial: { x: 0 },
+                    whileHover: { x: 16 },
+                  }}
+                  transition={{ type: "spring" }}
+                  className="inline-block text-white"
+                  key={i}
+                >
+                  {l}
+                </motion.span>
+              ))}
+            </div>
+            <div
+              className="mb-2 icon-container transition duration-300 ease-in-out"
+              onClick={() => window.open(link, "_blank", "noopener,noreferrer")}
             >
-              {l}
-            </motion.span>
-          ))}
+              <FontAwesomeIcon
+                className="text-white text-4xl icon-active transition duration-300 ease-in-out"
+                icon={faGithub}
+              />
+            </div>
+          </div>
         </motion.span>
-        <span className="relative z-10 mt-4 block text-base text-white transition-colors duration-500 group-hover:text-neutral-50">
+        <span className="relative z-10 mt-4 block text-left text-white transition-colors duration-500 group-hover:text-neutral-50">
           {subheading}
         </span>
       </div>
