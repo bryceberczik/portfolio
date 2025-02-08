@@ -1,7 +1,7 @@
 import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
-import FontAwesome from "react-fontawesome";
-import faGithub
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import stellabyte from "../images/stellabyte.png";
 import digbiai from "../images/digbi.png";
 import pronx from "../images/pronx.png";
@@ -106,7 +106,7 @@ const Link = ({ heading, imgSrc, subheading, href }: any) => {
               {l}
             </motion.span>
           ))}
-          <FontAwesome icon={} />
+          <FontAwesomeIcon icon={faGithub} />
         </motion.span>
         <span className="relative z-10 mt-4 block text-sm text-left text-white transition-colors duration-500 group-hover:text-neutral-50">
           {subheading}
