@@ -5,6 +5,7 @@ import MobileShuffleCards from "../components/MobileShuffleCards";
 import ShuffleCards from "../components/ShuffleCards";
 import { HoverImageLinks } from "../components/HoverImageLinks";
 import { useState, useEffect } from "react";
+import { MobileHoverImageLinks } from "../components/MobileHoverImageLinks";
 
 const Home = () => {
 
@@ -48,7 +49,12 @@ const Home = () => {
       <div id="projects" className="w-full text-center mt-[100px]">
         <h1 className="text-white font-semibold text-2xl">Projects</h1>
         <p className="text-white mt-2">Some of my best work</p>
-        <HoverImageLinks />
+
+        {isMobile ? (
+          <MobileHoverImageLinks />
+        ) : (
+          <HoverImageLinks />
+        )}
       </div>
     </div>
   );
