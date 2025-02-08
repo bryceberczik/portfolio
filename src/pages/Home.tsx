@@ -56,6 +56,13 @@ const Home = () => {
           <HoverImageLinks />
         )}
       </div>
+
+      <div id="skills" className="w-full mt-[100px] text-center">
+        <h1 className="text-white font-semibold text-2xl">Skills</h1>
+        <div>
+          
+        </div>
+      </div>
     </div>
   );
 };

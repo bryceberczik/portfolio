@@ -35,7 +35,7 @@ const GlassNavigation = () => {
         <Buttons setMenuOpen={setMenuOpen} />
       </div>
 
-      <MobileMenu menuOpen={menuOpen} />
+      <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
     </nav>
   );
 };
@@ -69,14 +69,15 @@ const Links = () => (
   <div className="hidden items-center gap-2 md:flex">
     <GlassLink id="about" text="About" />
     <GlassLink id="projects" text="Projects" />
-    <GlassLink text="Skills" />
+    <GlassLink id="skills" text="Skills" />
   </div>
 );
 
-const GlassLink = ({ text, id }: any) => {
+const GlassLink = ({ text, id, setMenuOpen }: any) => {
   return (
     <a
       href={`#${id}`}
+      onClick={() => setMenuOpen(false)}
       className="group relative scale-100 overflow-hidden rounded-lg px-4 py-2 transition-transform hover:scale-105 active:scale-95"
     >
       <span className="relative z-10 text-white/90 transition-colors group-hover:text-white">
@@ -99,9 +100,9 @@ const Buttons = ({ setMenuOpen }: any) => (
   </div>
 );
 
-const ContactButton = () => {
+const ContactButton = ({ setMenuOpen }: any) => {
   return (
-    <button className="group relative scale-100 overflow-hidden rounded-lg px-4 py-2 transition-transform hover:scale-105 active:scale-95">
+    <button onClick={() => setMenuOpen(false)} className="group relative scale-100 overflow-hidden rounded-lg px-4 py-2 transition-transform hover:scale-105 active:scale-95">
       <span className="relative z-10 text-white/90 transition-colors group-hover:text-white">
         Contact
       </span>
@@ -110,7 +111,7 @@ const ContactButton = () => {
   );
 };
 
-const MobileMenu = ({ menuOpen }: any) => {
+const MobileMenu = ({ menuOpen, setMenuOpen }: any) => {
   const [ref, { height }] = useMeasure();
   return (
     <motion.div
@@ -122,9 +123,9 @@ const MobileMenu = ({ menuOpen }: any) => {
     >
       <div ref={ref} className="flex items-center justify-between px-2 pb-4">
         <div className="flex items-center gap-1">
-        <GlassLink id="about" text="About" />
-        <GlassLink id="projects" text="Projects" />
-        <GlassLink text="Skills" />
+        <GlassLink id="about" text="About" setMenuOpen={setMenuOpen} />
+        <GlassLink id="projects" text="Projects" setMenuOpen={setMenuOpen} />
+        <GlassLink id="skills" text="Skills" setMenuOpen={setMenuOpen} />
         </div>
         <ContactButton />
       </div>
