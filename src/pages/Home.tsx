@@ -6,6 +6,7 @@ import ShuffleCards from "../components/ShuffleCards";
 import { HoverImageLinks } from "../components/HoverImageLinks";
 import { useState, useEffect } from "react";
 import { MobileHoverImageLinks } from "../components/MobileHoverImageLinks";
+import RenderSkillCards from "../components/SkillCards";
 
 const Home = () => {
 
@@ -28,7 +29,7 @@ const Home = () => {
       </div>
       <div className="text-center">
         <h1 className="text-white text-lg mt-5 font-semibold">Hey I'm Bryce. 🧑‍💻</h1>
-        <p className="jse text-2xl mt-2">Junior Software Engineer</p>
+        <p className="jse text-2xl mt-2">Full Stack Developer</p>
         <p className="text-white text-2xl mt-4 px-3">
           Focused on building impactful apps and mastering new technologies.
         </p>
@@ -55,6 +56,13 @@ const Home = () => {
         ) : (
           <HoverImageLinks />
         )}
+      </div>
+
+      <div id="skills" className="w-full mt-[100px] text-center">
+        <h1 className="text-white font-semibold text-2xl">Skills</h1>
+        <div>
+          <RenderSkillCards />
+        </div>
       </div>
     </div>
   );
