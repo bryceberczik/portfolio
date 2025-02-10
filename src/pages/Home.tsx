@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import { MobileHoverImageLinks } from "../components/MobileHoverImageLinks";
 import RenderSkillCards from "../components/SkillCards";
 import AIButton from "../components/GithubRepoButton";
+import ShiftingContactForm from "../components/ContactForm";
 
 const Home = () => {
 
@@ -72,7 +73,10 @@ const Home = () => {
       </div>
 
       <div className="w-full text-center mt-[100px]" id="contact">
-        <h1 className="text-white font-semibold text-2xl">Contact</h1>
+        <h1 className="text-white font-semibold text-2xl mb-[20px]">Contact</h1>
+        <div>
+          <ShiftingContactForm />
+        </div>
       </div>
     </div>
   );

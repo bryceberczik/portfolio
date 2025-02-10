@@ -4,7 +4,7 @@ import { useState } from "react";
 const ShiftingContactForm = () => {
   const [selected, setSelected] = useState("individual");
   return (
-    <section className="p-4 bg-slate-100">
+    <section className="p-4">
       <div className="w-full max-w-6xl mx-auto shadow-lg flex flex-col-reverse lg:flex-row rounded-lg overflow-hidden">
         <Form selected={selected} setSelected={setSelected} />
         <Images selected={selected} />
@@ -21,7 +21,6 @@ const Form = ({ selected, setSelected }: any) => {
         selected === "company" ? "bg-indigo-600" : "bg-violet-600"
       }`}
     >
-      <h3 className="text-4xl font-bold mb-6">Contact us</h3>
 
       {/* Name input */}
       <div className="mb-6">
