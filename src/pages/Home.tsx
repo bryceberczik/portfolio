@@ -70,6 +70,10 @@ const Home = () => {
           <RenderSkillCards />
         </div>
       </div>
+
+      <div className="w-full text-center mt-[100px]" id="contact">
+        <h1 className="text-white font-semibold text-2xl">Contact</h1>
+      </div>
     </div>
   );
 };
