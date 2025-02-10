@@ -51,13 +51,13 @@ const Link = ({ heading, subheading, href, link }: any) => {
       className="relative flex items-center justify-between border-b-2 border-white py-4 transition-colors duration-500 hover:border-neutral-50 md:py-8"
     >
       <div className="w-full">
-        <span className="relative custom-z flex text-4xl items-center gap-5 font-bold text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50 md:text-6xl">
+        <span className="relative flex text-4xl items-center gap-5 font-bold text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50 md:text-6xl">
           <div className="flex items-center justify-between w-full">
             <div>
               <h1 className="text-white">{heading}</h1>
             </div>
             <div
-              className="px-3 pb-1 relative z-10 cursor-pointer"
+              className="px-3 pb-1 cursor-pointer"
               onClick={(e) => {
                 e.stopPropagation();
                 window.open(link, "_blank", "noopener,noreferrer");
@@ -71,7 +71,7 @@ const Link = ({ heading, subheading, href, link }: any) => {
             </div>
           </div>
         </span>
-        <span className="relative z-10 mt-4 block text-sm text-left text-white transition-colors duration-500 group-hover:text-neutral-50">
+        <span className="relative  mt-4 block text-sm text-left text-white transition-colors duration-500 group-hover:text-neutral-50">
           {subheading}
         </span>
       </div>
