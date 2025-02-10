@@ -37,7 +37,7 @@ const RenderSkillCards = () => {
       {skills.map((skill) => (
         <div
           key={skill.name}
-          className="p-4 flex flex-col items-center rounded-2xl shadow-lg bg-white/20 backdrop-blur-lg hover:scale-105 transition-transform"
+          className="p-4 flex flex-col items-center rounded-2xl shadow-lg bg-white/20 backdrop-blur-lg"
         >
           <div className="flex flex-col items-center">
             <skill.icon style={{ color: skill.color, fontSize: "20px", }} />
