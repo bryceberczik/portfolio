@@ -7,6 +7,7 @@ import { HoverImageLinks } from "../components/HoverImageLinks";
 import { useState, useEffect } from "react";
 import { MobileHoverImageLinks } from "../components/MobileHoverImageLinks";
 import RenderSkillCards from "../components/SkillCards";
+import AIButton from "../components/GithubRepoButton";
 
 const Home = () => {
 
@@ -58,7 +59,12 @@ const Home = () => {
         )}
       </div>
 
-      <div id="skills" className="w-full mt-[100px] text-center">
+      <div className="text-center mt-9">
+        <h1 className="text-[whitesmoke] text-lg mb-4">Want to see more of my work?</h1>
+        <AIButton />
+      </div>
+
+      <div id="skills" className="w-full mt-[50px] text-center">
         <h1 className="text-white font-semibold text-2xl">Skills</h1>
         <div>
           <RenderSkillCards />
