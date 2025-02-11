@@ -1,6 +1,10 @@
 import AboutCard from "../components/AboutCard";
 import ProfilePic from "../images/IMG_0240.jpg";
-import { faUser, faHeart, faLightbulb } from "@fortawesome/free-regular-svg-icons";
+import {
+  faUser,
+  faHeart,
+  faLightbulb,
+} from "@fortawesome/free-regular-svg-icons";
 import MobileShuffleCards from "../components/MobileShuffleCards";
 import ShuffleCards from "../components/ShuffleCards";
 import { HoverImageLinks } from "../components/HoverImageLinks";
@@ -10,9 +14,10 @@ import RenderSkillCards from "../components/SkillCards";
 import AIButton from "../components/GithubRepoButton";
 import ShiftingContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import ResumeButton from "../components/ResumeButton";
 
 const Home = () => {
-
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
@@ -31,38 +36,66 @@ const Home = () => {
         />
       </div>
       <div className="text-center">
-        <h1 className="text-white text-lg mt-5 font-semibold">Hey I'm Bryce. 🧑‍💻</h1>
+        <h1 className="text-white text-lg mt-5 font-semibold">
+          Hey I'm Bryce. 🧑‍💻
+        </h1>
         <p className="jse text-2xl mt-2">Full Stack Developer</p>
         <p className="text-white text-xl mt-4 px-3">
           Focused on building impactful apps and mastering new technologies.
         </p>
       </div>
-
-      <div id="about" className="scroll-mt-48 w-full text-center mt-[100px]">
+      <div className="flex flex-row gap-3 mt-[30px]">
+        <a
+          href="https://github.com/bryceberczik"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[whitesmoke] hover:text-gray-400"
+        >
+          <FaGithub size={40} />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/bryce-berczik-9b4874323/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[whitesmoke] hover:text-gray-400"
+        >
+          <FaLinkedin size={40} />
+        </a>
+      </div>
+      <div className="mt-9">
+        <ResumeButton />
+      </div>
+      <div id="about" className="scroll-mt-48 w-full text-center mt-[70px]">
         <h1 className="text-white font-semibold text-2xl">About</h1>
-        <AboutCard icon={faUser} heading="About Me" description="Junior full-stack engineer passionate about turning ideas into code. Specializing in React, TypeScript, and Tailwind on the frontend, with Node.js and Prisma + PostgreSQL on the backend. Also proficient in the MERN stack and other technologies." />
-        <AboutCard icon={faHeart} heading="Education" description="I studied full-stack development at UTSA, focusing on React and Node.js. During the program, I built dynamic web apps and gained hands-on experience with modern frameworks and backend development, finishing strong and learning a lot." />
-        <AboutCard icon={faLightbulb} heading="Problem Solving" description="I thrive on problem-solving, turning complex issues into efficient solutions. Whether it's debugging, optimizing performance, or designing scalable architectures, I enjoy tackling challenges and creating impactful solutions while continuously learning." />
-        {isMobile ? (
-          <MobileShuffleCards />
-        ) : (
-          <ShuffleCards />
-        )}
+        <AboutCard
+          icon={faUser}
+          heading="About Me"
+          description="Junior full-stack engineer passionate about turning ideas into code. Specializing in React, TypeScript, and Tailwind on the frontend, with Node.js and Prisma + PostgreSQL on the backend. Also proficient in the MERN stack and other technologies."
+        />
+        <AboutCard
+          icon={faHeart}
+          heading="Education"
+          description="I studied full-stack development at UTSA, focusing on React and Node.js. During the program, I built dynamic web apps and gained hands-on experience with modern frameworks and backend development, finishing strong and learning a lot."
+        />
+        <AboutCard
+          icon={faLightbulb}
+          heading="Problem Solving"
+          description="I thrive on problem-solving, turning complex issues into efficient solutions. Whether it's debugging, optimizing performance, or designing scalable architectures, I enjoy tackling challenges and creating impactful solutions while continuously learning."
+        />
+        {isMobile ? <MobileShuffleCards /> : <ShuffleCards />}
       </div>
 
       <div id="projects" className="scroll-mt-48 w-full text-center mt-[100px]">
         <h1 className="text-white font-semibold text-2xl">Projects</h1>
         <p className="text-white mt-2">Some of my best work</p>
 
-        {isMobile ? (
-          <MobileHoverImageLinks />
-        ) : (
-          <HoverImageLinks />
-        )}
+        {isMobile ? <MobileHoverImageLinks /> : <HoverImageLinks />}
       </div>
 
       <div className="text-center mt-9">
-        <h1 className="text-[whitesmoke] text-lg mb-4">Want to see more of my work?</h1>
+        <h1 className="text-[whitesmoke] text-lg mb-4">
+          Want to see more of my work?
+        </h1>
         <AIButton />
       </div>
 
