@@ -38,7 +38,7 @@ const Home = () => {
         </p>
       </div>
 
-      <div id="about" className="w-full text-center mt-[100px]">
+      <div id="about" className="scroll-mt-48 w-full text-center mt-[100px]">
         <h1 className="text-white font-semibold text-2xl">About</h1>
         <AboutCard icon={faUser} heading="About Me" description="Junior full-stack engineer passionate about turning ideas into code. Specializing in React, TypeScript, and Tailwind on the frontend, with Node.js and Prisma + PostgreSQL on the backend. Also proficient in the MERN stack and other technologies." />
         <AboutCard icon={faHeart} heading="Education" description="I studied full-stack development at UTSA, focusing on React and Node.js. During the program, I built dynamic web apps and gained hands-on experience with modern frameworks and backend development, finishing strong and learning a lot." />
@@ -50,7 +50,7 @@ const Home = () => {
         )}
       </div>
 
-      <div id="projects" className="w-full text-center mt-[100px]">
+      <div id="projects" className="scroll-mt-48 w-full text-center mt-[100px]">
         <h1 className="text-white font-semibold text-2xl">Projects</h1>
         <p className="text-white mt-2">Some of my best work</p>
 
@@ -66,14 +66,14 @@ const Home = () => {
         <AIButton />
       </div>
 
-      <div id="skills" className="w-full mt-[50px] text-center">
+      <div id="skills" className="scroll-mt-48 w-full mt-[50px] text-center">
         <h1 className="text-white font-semibold text-2xl">Skills</h1>
         <div>
           <RenderSkillCards />
         </div>
       </div>
 
-      <div className="w-full text-center mt-[100px]" id="contact">
+      <div className="scroll-mt-48 w-full text-center mt-[100px]" id="contact">
         <h1 className="text-white font-semibold text-2xl mb-[20px]">Contact</h1>
         <div>
           <ShiftingContactForm />
