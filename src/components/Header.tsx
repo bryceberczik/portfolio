@@ -17,13 +17,16 @@ const GlassNavigation = () => {
   const navRef = useRef(null);
 
   return (
-    <nav
+    <motion.nav
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0.5, ease: [0, 0.71, 0.2, 1.01] }}
       ref={navRef}
       onMouseLeave={() => setHovered(false)}
       style={{
         cursor: hovered ? "none" : "auto",
       }}
-      className="glass-nav fixed left-0 right-0 top-0 z-10 mx-auto max-w-6xl overflow-hidden border-[1px] border-white/10 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur md:left-6 md:right-6 md:top-6 md:rounded-2xl"
+      className="glass-nav fixed left-0 right-0 top-0 z-20 mx-auto max-w-6xl overflow-hidden border-[1px] border-white/10 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur md:left-6 md:right-6 md:top-6 md:rounded-2xl"
     >
       <div className="glass-nav flex items-center justify-between px-5 py-5">
         <Cursor hovered={hovered} scope={scope} />
@@ -36,7 +39,7 @@ const GlassNavigation = () => {
       </div>
 
       <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-    </nav>
+    </motion.nav>
   );
 };
 
@@ -60,13 +63,13 @@ const Cursor = ({ hovered, scope }: any) => {
 };
 
 const Logo = () => (
-  <span className="pointer-events-none relative left-0 top-[50%] z-10 text-2xl text-white mix-blend-overlay md:absolute md:left-[50%] md:-translate-x-[50%] md:-translate-y-[50%]">
+  <span className="pointer-events-none relative left-0 top-[50%] z-10 text-xl text-white mix-blend-overlay md:absolute md:left-[50%] md:-translate-x-[50%] md:-translate-y-[50%]">
     Bryce Berczik
   </span>
 );
 
 const Links = () => (
-  <div className="hidden items-center gap-2 md:flex">
+  <div className="hidden items-center md:flex">
     <GlassLink id="about" text="About" />
     <GlassLink id="projects" text="Projects" />
     <GlassLink id="skills" text="Skills" />
@@ -95,7 +98,10 @@ const Buttons = ({ setMenuOpen }: any) => (
 
     <ButtonWrapper />
 
+    <div className="md:hidden">
     <Hamburger rounded color="white" onToggle={setMenuOpen} />
+    </div>
+    
   </div>
 );
 
