@@ -73,11 +73,10 @@ const Links = () => (
   </div>
 );
 
-const GlassLink = ({ text, id, setMenuOpen }: any) => {
+const GlassLink = ({ text, id }: any) => {
   return (
     <a
       href={`#${id}`}
-      onClick={() => setMenuOpen(false)}
       className="group relative scale-100 overflow-hidden rounded-lg px-4 py-2 transition-transform hover:scale-105 active:scale-95"
     >
       <span className="relative z-10 text-white/90 transition-colors group-hover:text-white">
@@ -100,10 +99,9 @@ const Buttons = ({ setMenuOpen }: any) => (
   </div>
 );
 
-const ContactButton = ({ setMenuOpen }: any) => {
-
+const ContactButton = () => {
   return (
-      <a href="#contact" className="relative mr-4" onClick={() => setMenuOpen(false)}>
+      <a href="#contact" className="relative mr-4">
       <span className="relative z-10 text-white/90 transition-colors group-hover:text-white">
         Contact
       </span>
