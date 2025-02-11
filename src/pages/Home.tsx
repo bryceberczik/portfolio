@@ -9,6 +9,7 @@ import { MobileHoverImageLinks } from "../components/MobileHoverImageLinks";
 import RenderSkillCards from "../components/SkillCards";
 import AIButton from "../components/GithubRepoButton";
 import ShiftingContactForm from "../components/ContactForm";
+import Footer from "../components/Footer";
 
 const Home = () => {
 
@@ -78,6 +79,7 @@ const Home = () => {
           <ShiftingContactForm />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
