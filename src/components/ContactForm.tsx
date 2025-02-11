@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 const ShiftingContactForm = () => {
   const [selected, setSelected] = useState("individual");
@@ -32,8 +33,26 @@ const Form = ({ selected, setSelected }: any) => {
 
     if (data.success) {
       event.target.reset();
+      Swal.fire({
+        title: "Message submitted!",
+        text: "I'll get back to you as soon as possible!",
+        icon: "success",
+        background: "#3c1e5b",
+        color: "#fff",
+        confirmButtonText: "Close",
+        confirmButtonColor: "#00bc7d"
+      });
     } else {
       console.log("Error", data);
+      Swal.fire({
+        title: "Message failed!",
+        text: "Something went wrong, please try again.",
+        icon: "error",
+        background: "#3c1e5b",
+        color: "#fff",
+        confirmButtonText: "Close",
+        confirmButtonColor: "#00bc7d"
+      });
     }
     setIsSubmitting(false);
   };
