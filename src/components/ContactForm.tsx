@@ -4,21 +4,24 @@ import Swal from "sweetalert2";
 
 const ShiftingContactForm = () => {
   const [selected, setSelected] = useState("individual");
+  const [isSwitching, setIsSwitching] = useState(false); // Track switching
+
   return (
     <section className="p-4">
       <div className="w-full max-w-6xl mx-auto shadow-lg flex flex-col-reverse lg:flex-row rounded-lg overflow-hidden">
-        <Form selected={selected} setSelected={setSelected} />
+        <Form selected={selected} setSelected={setSelected} isSwitching={isSwitching} setIsSwitching={setIsSwitching} />
         <Images selected={selected} />
       </div>
     </section>
   );
 };
 
-const Form = ({ selected, setSelected }: any) => {
+const Form = ({ selected, setSelected, isSwitching, setIsSwitching }: any) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const onSubmit = async (event: any) => {
     event.preventDefault();
+    if (isSwitching) return; // Prevent form submission while switching
     setIsSubmitting(true);
     const formData = new FormData(event.target);
 
@@ -56,13 +59,12 @@ const Form = ({ selected, setSelected }: any) => {
     }
     setIsSubmitting(false);
   };
+
   return (
     <form
       onSubmit={onSubmit}
       className={`p-8 w-full text-white transition-colors duration-[750ms] ${
-        selected === "company"
-          ? "shadow-lg bg-white/10 backdrop-blur-lg"
-          : "shadow-lg bg-white/10 backdrop-blur-lg"
+        selected === "company" ? "shadow-lg bg-white/10 backdrop-blur-lg" : "shadow-lg bg-white/10 backdrop-blur-lg"
       }`}
     >
       {/* Name input */}
@@ -73,9 +75,7 @@ const Form = ({ selected, setSelected }: any) => {
           type="text"
           placeholder="Enter name here.."
           className={`${
-            selected === "company"
-              ? "shadow-lg bg-white/10 backdrop-blur-lg"
-              : "shadow-lg bg-white/10 backdrop-blur-lg"
+            selected === "company" ? "shadow-lg bg-white/10 backdrop-blur-lg" : "shadow-lg bg-white/10 backdrop-blur-lg"
           } transition-colors duration-[750ms] placeholder-white/70 p-2 rounded-md w-full focus:outline-0`}
         />
       </div>
@@ -83,7 +83,7 @@ const Form = ({ selected, setSelected }: any) => {
       {/* Company/individual toggle */}
       <div className="mb-6 flex flex-col items-center">
         <p className="text-xl mb-2">and I represent..</p>
-        <FormSelect selected={selected} setSelected={setSelected} />
+        <FormSelect selected={selected} setSelected={setSelected} setIsSwitching={setIsSwitching} />
       </div>
 
       {/* Company name */}
@@ -91,10 +91,6 @@ const Form = ({ selected, setSelected }: any) => {
         {selected === "company" && (
           <motion.div
             initial={{
-              // 104 === height of element + margin
-              // Alternatively can use mode='popLayout' on AnimatePresence
-              // and add the "layout" prop to relevant elements to reduce
-              // distortion
               marginTop: -104,
               opacity: 0,
             }}
@@ -139,6 +135,7 @@ const Form = ({ selected, setSelected }: any) => {
           scale: 0.99,
         }}
         type="submit"
+        disabled={isSwitching || isSubmitting} // Disable when switching or submitting
         className="shadow-lg bg-white/10 backdrop-blur-lg transition-colors duration-[750ms] text-lg text-center rounded-lg w-full py-3 font-semibold"
       >
         {isSubmitting ? <>Submitting...</> : <>Submit</>}
@@ -147,14 +144,22 @@ const Form = ({ selected, setSelected }: any) => {
   );
 };
 
-const FormSelect = ({ selected, setSelected }: any) => {
+const FormSelect = ({ selected, setSelected, setIsSwitching }: any) => {
+  const handleSelection = (value: string) => {
+    setIsSwitching(true); // Set switching state to true
+    setSelected(value);
+    setTimeout(() => {
+      setIsSwitching(false); // Reset switching state after transition
+    }, 750); // Match the duration of your transition
+  };
+
   return (
     <div className="border-[1px] rounded border-white overflow-hidden font-medium w-fit">
       <button
         className={`${
           selected === "individual" ? "text-white" : "text-white"
         } text-sm px-3 py-1.5 transition-colors duration-[750ms] relative`}
-        onClick={() => setSelected("individual")}
+        onClick={() => handleSelection("individual")}
       >
         <span className="relative z-10">An individual</span>
         {selected === "individual" && (
@@ -169,7 +174,7 @@ const FormSelect = ({ selected, setSelected }: any) => {
         className={`${
           selected === "company" ? "text-white" : "text-white"
         } text-sm px-3 py-1.5 transition-colors duration-[750ms] relative`}
-        onClick={() => setSelected("company")}
+        onClick={() => handleSelection("company")}
       >
         <span className="relative z-10">A company</span>
         {selected === "company" && (

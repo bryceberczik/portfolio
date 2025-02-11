@@ -33,16 +33,16 @@ const Home = () => {
       <div className="text-center">
         <h1 className="text-white text-lg mt-5 font-semibold">Hey I'm Bryce. 🧑‍💻</h1>
         <p className="jse text-2xl mt-2">Full Stack Developer</p>
-        <p className="text-white text-2xl mt-4 px-3">
+        <p className="text-white text-xl mt-4 px-3">
           Focused on building impactful apps and mastering new technologies.
         </p>
       </div>
 
       <div id="about" className="w-full text-center mt-[100px]">
         <h1 className="text-white font-semibold text-2xl">About</h1>
-        <AboutCard icon={faUser} heading="About Me" description="A young junior full-stack software engineer passionate about bringing ideas to life through code. I specialize in React, TypeScript, and Tailwind on the frontend, with Node.js handling the backend. Experienced in both SQL and NoSQL databases, primarily using Prisma with PostgreSQL (PERN stack), but also proficient in the MERN stack and other technologies." />
-        <AboutCard icon={faHeart} heading="Education" description="I attended UTSA in San Antonio, where I studied full-stack development with a focus on React and Node.js. Throughout the program, I gained hands-on experience building dynamic web applications, working with modern frameworks, and mastering backend development. I completed the program successfully, finishing strong and learning a tremendous amount along the way." />
-        <AboutCard icon={faLightbulb} heading="Problem Solving" description="I thrive on problem-solving and the challenge of turning complex issues into seamless solutions. Whether it's debugging code, optimizing performance, or designing scalable architectures, I enjoy breaking down problems and finding the most efficient way to solve them. Software development allows me to continuously learn, adapt, and create solutions that make a real impact." />
+        <AboutCard icon={faUser} heading="About Me" description="Junior full-stack engineer passionate about turning ideas into code. Specializing in React, TypeScript, and Tailwind on the frontend, with Node.js and Prisma + PostgreSQL on the backend. Also proficient in the MERN stack and other technologies." />
+        <AboutCard icon={faHeart} heading="Education" description="I studied full-stack development at UTSA, focusing on React and Node.js. During the program, I built dynamic web apps and gained hands-on experience with modern frameworks and backend development, finishing strong and learning a lot." />
+        <AboutCard icon={faLightbulb} heading="Problem Solving" description="I thrive on problem-solving, turning complex issues into efficient solutions. Whether it's debugging, optimizing performance, or designing scalable architectures, I enjoy tackling challenges and creating impactful solutions while continuously learning." />
         {isMobile ? (
           <MobileShuffleCards />
         ) : (
