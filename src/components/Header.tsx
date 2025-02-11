@@ -17,7 +17,10 @@ const GlassNavigation = () => {
   const navRef = useRef(null);
 
   return (
-    <nav
+    <motion.nav
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0.5, ease: [0, 0.71, 0.2, 1.01] }}
       ref={navRef}
       onMouseLeave={() => setHovered(false)}
       style={{
@@ -36,7 +39,7 @@ const GlassNavigation = () => {
       </div>
 
       <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-    </nav>
+    </motion.nav>
   );
 };
 

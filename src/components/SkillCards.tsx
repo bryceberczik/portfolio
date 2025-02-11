@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { FaReact, FaNodeJs } from "react-icons/fa";
 import {
   SiTypescript,
@@ -33,22 +34,29 @@ const skills = [
 
 const RenderSkillCards = () => {
   return (
-    <div className="flex flex-wrap justify-center gap-4 p-6 xl:px-16 2xl:px-96">
-
-      {skills.map((skill) => (
-        <div
+    <motion.div 
+      className="flex flex-wrap justify-center gap-4 p-6 xl:px-16 2xl:px-96"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+    >
+      {skills.map((skill, index) => (
+        <motion.div
           key={skill.name}
           className="p-4 flex flex-col h-24 w-32 items-center rounded-2xl shadow-lg bg-white/20 backdrop-blur-lg"
+          variants={{
+            hidden: { opacity: 0, y: 50 },
+            visible: { opacity: 1, y: 0, transition: { delay: index * 0.05, duration: 0.5, ease: "easeOut" } }
+          }}
         >
           <div className="flex flex-col items-center">
             <skill.icon style={{ color: skill.color, fontSize: "20px" }} />
             <p className="mt-2 text-[whitesmoke] text-lg font-semibold">{skill.name}</p>
           </div>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };
-
 
 export default RenderSkillCards;
