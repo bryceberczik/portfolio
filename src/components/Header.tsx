@@ -66,7 +66,7 @@ const Logo = () => (
 );
 
 const Links = () => (
-  <div className="hidden items-center gap-2 md:flex">
+  <div className="hidden items-center md:flex">
     <GlassLink id="about" text="About" />
     <GlassLink id="projects" text="Projects" />
     <GlassLink id="skills" text="Skills" />
@@ -95,7 +95,10 @@ const Buttons = ({ setMenuOpen }: any) => (
 
     <ButtonWrapper />
 
+    <div className="md:hidden">
     <Hamburger rounded color="white" onToggle={setMenuOpen} />
+    </div>
+    
   </div>
 );
 

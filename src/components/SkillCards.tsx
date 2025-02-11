@@ -33,14 +33,14 @@ const skills = [
 
 const RenderSkillCards = () => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-6 p-6">
+    <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 p-6 xl:px-16 2xl:grid-cols-5 2xl:px-60 justify-center">
       {skills.map((skill) => (
         <div
           key={skill.name}
           className="p-4 flex flex-col items-center rounded-2xl shadow-lg bg-white/20 backdrop-blur-lg"
         >
           <div className="flex flex-col items-center">
-            <skill.icon style={{ color: skill.color, fontSize: "20px", }} />
+            <skill.icon style={{ color: skill.color, fontSize: "20px" }} />
             <p className="mt-2 text-[whitesmoke] text-lg font-semibold">{skill.name}</p>
           </div>
         </div>
@@ -48,5 +48,6 @@ const RenderSkillCards = () => {
     </div>
   );
 };
+
 
 export default RenderSkillCards;

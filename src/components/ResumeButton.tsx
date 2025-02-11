@@ -9,23 +9,27 @@ const ResumeButton = () => {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-    }
-  return (
-    <button onClick={handleDownload} className="text-white font-medium px-3 py-2 rounded-md overflow-hidden relative transition-transform hover:scale-105 active:scale-95">
-      <span className="relative z-10">Download Resume</span>
-      <motion.div
-        initial={{ left: 0 }}
-        animate={{ left: "-300%" }}
-        transition={{
-          repeat: Infinity,
-          repeatType: "mirror",
-          duration: 4,
-          ease: "linear",
-        }}
-        className="bg-[linear-gradient(to_right,#683a89,#3a5f77,#008f7a)] absolute z-0 inset-0 w-[400%]"
-      ></motion.div>a
-    </button>
-  );
+    };
+
+    return (
+        <button 
+            onClick={handleDownload} 
+            className="relative overflow-hidden text-white font-medium px-4 py-2 rounded-md transition-transform hover:scale-105 active:scale-95 flex items-center justify-center"
+        >
+            <span className="relative z-10">Download Resume</span>
+            <motion.div
+                initial={{ left: 0 }}
+                animate={{ left: "-300%" }}
+                transition={{
+                    repeat: Infinity,
+                    repeatType: "mirror",
+                    duration: 4,
+                    ease: "linear",
+                }}
+                className="absolute inset-0 w-[400%] bg-[linear-gradient(to_right,#683a89,#3a5f77,#008f7a)] pointer-events-none"
+            />
+        </button>
+    );
 };
 
 export default ResumeButton;

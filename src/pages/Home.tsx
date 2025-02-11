@@ -22,10 +22,10 @@ const Home = () => {
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
   return (
     <div className="h-screen flex flex-col items-center">
       <div className="mt-[150px] w-[150px] mx-auto h-[150px] ">
@@ -40,7 +40,7 @@ const Home = () => {
           Hey I'm Bryce. 🧑‍💻
         </h1>
         <p className="jse text-2xl mt-2">Full Stack Developer</p>
-        <p className="text-white text-xl mt-4 px-3">
+        <p className="text-white text-xl mt-4 px-3 md:px-16">
           Focused on building impactful apps and mastering new technologies.
         </p>
       </div>
@@ -65,29 +65,30 @@ const Home = () => {
       <div className="mt-9">
         <ResumeButton />
       </div>
-      <div id="about" className="scroll-mt-48 w-full text-center mt-[70px]">
-        <h1 className="text-white font-semibold text-2xl">About</h1>
-        <AboutCard
-          icon={faUser}
-          heading="About Me"
-          description="Junior full-stack engineer passionate about turning ideas into code. Specializing in React, TypeScript, and Tailwind on the frontend, with Node.js and Prisma + PostgreSQL on the backend. Also proficient in the MERN stack and other technologies."
-        />
-        <AboutCard
-          icon={faHeart}
-          heading="Education"
-          description="I studied full-stack development at UTSA, focusing on React and Node.js. During the program, I built dynamic web apps and gained hands-on experience with modern frameworks and backend development, finishing strong and learning a lot."
-        />
-        <AboutCard
-          icon={faLightbulb}
-          heading="Problem Solving"
-          description="I thrive on problem-solving, turning complex issues into efficient solutions. Whether it's debugging, optimizing performance, or designing scalable architectures, I enjoy tackling challenges and creating impactful solutions while continuously learning."
-        />
+      <div id="about" className="scroll-mt-48 w-full text-center mt-[90px]">
+        <h1 className="text-white font-semibold text-2xl 2xl:text-3xl">About</h1>
+        <div className="xl:flex xl:flex-row xl:justify-center">
+          <AboutCard
+            icon={faUser}
+            heading="About Me"
+            description="Junior full-stack engineer passionate about turning ideas into code. Specializing in React, TypeScript, and Tailwind on the frontend, with Node.js and Prisma + PostgreSQL on the backend. Also proficient in the MERN stack and other technologies."
+          />
+          <AboutCard
+            icon={faHeart}
+            heading="Education"
+            description="I studied full-stack development at UTSA, focusing on React and Node.js. During the program, I built dynamic web apps and gained hands-on experience with modern frameworks and backend development, finishing strong and learning a lot."
+          />
+          <AboutCard
+            icon={faLightbulb}
+            heading="Problem Solving"
+            description="I thrive on problem-solving, turning complex issues into efficient solutions. Whether it's debugging, optimizing performance, or designing scalable architectures, I enjoy tackling challenges and creating impactful solutions while continuously learning."
+          />
+        </div>
         {isMobile ? <MobileShuffleCards /> : <ShuffleCards />}
       </div>
 
       <div id="projects" className="scroll-mt-48 w-full text-center mt-[100px]">
-        <h1 className="text-white font-semibold text-2xl">Projects</h1>
-        <p className="text-white mt-2">Some of my best work</p>
+        <h1 className="text-white font-semibold text-2xl 2xl:text-3xl">Projects</h1>
 
         {isMobile ? <MobileHoverImageLinks /> : <HoverImageLinks />}
       </div>
@@ -100,14 +101,14 @@ const Home = () => {
       </div>
 
       <div id="skills" className="scroll-mt-48 w-full mt-[50px] text-center">
-        <h1 className="text-white font-semibold text-2xl">Skills</h1>
+        <h1 className="text-white font-semibold text-2xl 2xl:text-3xl mb-7">Skills</h1>
         <div>
           <RenderSkillCards />
         </div>
       </div>
 
       <div className="scroll-mt-48 w-full text-center mt-[100px]" id="contact">
-        <h1 className="text-white font-semibold text-2xl mb-[20px]">Contact</h1>
+        <h1 className="text-white font-semibold text-2xl mb-[440px] 2xl:text-3xl">Contact</h1>
         <div>
           <ShiftingContactForm />
         </div>

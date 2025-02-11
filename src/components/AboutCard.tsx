@@ -4,7 +4,7 @@ import { IAbout } from "../interfaces/interfaces";
 
 const AboutCard = ({ heading, description, icon }: IAbout) => {
   return (
-    <div className="px-4 py-12">
+    <div className="px-4 xl:px-3 py-12 2xl:px-10">
       <GlassmorphicCard
         heading={heading}
         description={description}

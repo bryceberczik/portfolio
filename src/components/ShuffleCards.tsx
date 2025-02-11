@@ -17,7 +17,7 @@ const ShuffleCards = () => {
   return (
     <div className="grid place-content-center overflow-hidden px-8 py-24 text-slate-50">
       {" "}
-      <div className="relative -ml-[100px] h-[450px] w-[350px] md:-ml-[175px]">
+      <div className="relative -ml-[100px] h-[450px] w-[350px] md:-ml-[225px]">
         {" "}
         <Card
           imgUrl={zander}
