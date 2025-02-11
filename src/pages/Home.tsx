@@ -108,7 +108,7 @@ const Home = () => {
       </div>
 
       <div className="scroll-mt-48 w-full text-center mt-[100px]" id="contact">
-        <h1 className="text-white font-semibold text-2xl mb-[440px] 2xl:text-3xl">Contact</h1>
+        <h1 className="text-white font-semibold text-2xl mb-[40px] 2xl:text-3xl">Contact</h1>
         <div>
           <ShiftingContactForm />
         </div>
