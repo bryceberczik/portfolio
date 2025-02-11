@@ -14,29 +14,50 @@ const ShiftingContactForm = () => {
 };
 
 const Form = ({ selected, setSelected }: any) => {
+
+  const onSubmit = async (event: any) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "73a6d637-0dd7-4625-ba1a-3c217cac240a");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+    }
+  };
   return (
     <form
-      onSubmit={(e) => e.preventDefault()}
+      onSubmit={onSubmit}
       className={`p-8 w-full text-white transition-colors duration-[750ms] ${
-        selected === "company" ? "bg-indigo-600" : "bg-violet-600"
+        selected === "company" ? "shadow-lg bg-white/10 backdrop-blur-lg" : "shadow-lg bg-white/10 backdrop-blur-lg"
       }`}
     >
 
       {/* Name input */}
       <div className="mb-6">
-        <p className="text-2xl mb-2">Hi 👋! My name is...</p>
+        <p className="text-xl mb-2">My name is..</p>
         <input
+          name="name"
           type="text"
-          placeholder="Your name..."
+          placeholder="Enter name here.."
           className={`${
-            selected === "company" ? "bg-indigo-700" : "bg-violet-700"
+            selected === "company" ? "shadow-lg bg-white/10 backdrop-blur-lg" : "shadow-lg bg-white/10 backdrop-blur-lg"
           } transition-colors duration-[750ms] placeholder-white/70 p-2 rounded-md w-full focus:outline-0`}
         />
       </div>
 
       {/* Company/individual toggle */}
-      <div className="mb-6">
-        <p className="text-2xl mb-2">and I represent...</p>
+      <div className="mb-6 flex flex-col items-center">
+        <p className="text-xl mb-2">and I represent..</p>
         <FormSelect selected={selected} setSelected={setSelected} />
       </div>
 
@@ -63,13 +84,12 @@ const Form = ({ selected, setSelected }: any) => {
             transition={BASE_TRANSITION}
             className="mb-6"
           >
-            <p className="text-2xl mb-2">by the name of...</p>
+            <p className="text-xl mb-2">by the name of..</p>
             <input
+              name="company"
               type="text"
-              placeholder="Your company name..."
-              className={`${
-                selected === "company" ? "bg-indigo-700" : "bg-violet-700"
-              } transition-colors duration-[750ms] placeholder-white/70 p-2 rounded-md w-full focus:outline-0`}
+              placeholder="Enter company name.."
+              className="shadow-lg bg-white/10 backdrop-blur-lg transition-colors duration-[750ms] placeholder-white/70 p-2 rounded-md w-full focus:outline-0"
             />
           </motion.div>
         )}
@@ -77,12 +97,11 @@ const Form = ({ selected, setSelected }: any) => {
 
       {/* Info */}
       <div className="mb-6">
-        <p className="text-2xl mb-2">I'd love to ask about...</p>
+        <p className="text-xl mb-2">Let's talk about..</p>
         <textarea
-          placeholder="Whatever your heart desires :)"
-          className={`${
-            selected === "company" ? "bg-indigo-700" : "bg-violet-700"
-          } transition-colors duration-[750ms] min-h-[150px] resize-none placeholder-white/70 p-2 rounded-md w-full focus:outline-0`}
+          name="message"
+          placeholder="Enter message here.."
+          className="shadow-lg bg-white/10 backdrop-blur-lg transition-colors duration-[750ms] min-h-[150px] resize-none placeholder-white/70 p-2 rounded-md w-full focus:outline-0"
         />
       </div>
 
@@ -95,11 +114,7 @@ const Form = ({ selected, setSelected }: any) => {
           scale: 0.99,
         }}
         type="submit"
-        className={`${
-          selected === "company"
-            ? "bg-white text-indigo-600"
-            : "bg-white text-violet-600"
-        } transition-colors duration-[750ms] text-lg text-center rounded-lg w-full py-3 font-semibold`}
+        className="shadow-lg bg-white/10 backdrop-blur-lg transition-colors duration-[750ms] text-lg text-center rounded-lg w-full py-3 font-semibold"
       >
         Submit
       </motion.button>
@@ -112,7 +127,7 @@ const FormSelect = ({ selected, setSelected }: any) => {
     <div className="border-[1px] rounded border-white overflow-hidden font-medium w-fit">
       <button
         className={`${
-          selected === "individual" ? "text-violet-600" : "text-white"
+          selected === "individual" ? "text-white" : "text-white"
         } text-sm px-3 py-1.5 transition-colors duration-[750ms] relative`}
         onClick={() => setSelected("individual")}
       >
@@ -121,13 +136,13 @@ const FormSelect = ({ selected, setSelected }: any) => {
           <motion.div
             transition={BASE_TRANSITION}
             layoutId="form-tab"
-            className="absolute inset-0 bg-white z-0"
+            className="absolute inset-0 shadow-lg bg-white/10 backdrop-blur-lg"
           />
         )}
       </button>
       <button
         className={`${
-          selected === "company" ? "text-indigo-600" : "text-white"
+          selected === "company" ? "text-white" : "text-white"
         } text-sm px-3 py-1.5 transition-colors duration-[750ms] relative`}
         onClick={() => setSelected("company")}
       >
@@ -136,7 +151,7 @@ const FormSelect = ({ selected, setSelected }: any) => {
           <motion.div
             transition={BASE_TRANSITION}
             layoutId="form-tab"
-            className="absolute inset-0 bg-white z-0"
+            className="absolute inset-0 shadow-lg bg-white/10 backdrop-blur-lg"
           />
         )}
       </button>
