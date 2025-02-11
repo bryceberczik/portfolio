@@ -14,16 +14,18 @@ const ShiftingContactForm = () => {
 };
 
 const Form = ({ selected, setSelected }: any) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const onSubmit = async (event: any) => {
     event.preventDefault();
+    setIsSubmitting(true);
     const formData = new FormData(event.target);
 
     formData.append("access_key", "73a6d637-0dd7-4625-ba1a-3c217cac240a");
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
-      body: formData
+      body: formData,
     });
 
     const data = await response.json();
@@ -33,15 +35,17 @@ const Form = ({ selected, setSelected }: any) => {
     } else {
       console.log("Error", data);
     }
+    setIsSubmitting(false);
   };
   return (
     <form
       onSubmit={onSubmit}
       className={`p-8 w-full text-white transition-colors duration-[750ms] ${
-        selected === "company" ? "shadow-lg bg-white/10 backdrop-blur-lg" : "shadow-lg bg-white/10 backdrop-blur-lg"
+        selected === "company"
+          ? "shadow-lg bg-white/10 backdrop-blur-lg"
+          : "shadow-lg bg-white/10 backdrop-blur-lg"
       }`}
     >
-
       {/* Name input */}
       <div className="mb-6">
         <p className="text-xl mb-2">My name is..</p>
@@ -50,7 +54,9 @@ const Form = ({ selected, setSelected }: any) => {
           type="text"
           placeholder="Enter name here.."
           className={`${
-            selected === "company" ? "shadow-lg bg-white/10 backdrop-blur-lg" : "shadow-lg bg-white/10 backdrop-blur-lg"
+            selected === "company"
+              ? "shadow-lg bg-white/10 backdrop-blur-lg"
+              : "shadow-lg bg-white/10 backdrop-blur-lg"
           } transition-colors duration-[750ms] placeholder-white/70 p-2 rounded-md w-full focus:outline-0`}
         />
       </div>
@@ -116,7 +122,7 @@ const Form = ({ selected, setSelected }: any) => {
         type="submit"
         className="shadow-lg bg-white/10 backdrop-blur-lg transition-colors duration-[750ms] text-lg text-center rounded-lg w-full py-3 font-semibold"
       >
-        Submit
+        {isSubmitting ? <>Submitting...</> : <>Submit</>}
       </motion.button>
     </form>
   );
