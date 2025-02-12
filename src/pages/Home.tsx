@@ -1,10 +1,5 @@
 import AboutCard from "../components/AboutCard";
 import ProfilePic from "../images/IMG_0240.jpg";
-import {
-  faUser,
-  faHeart,
-  faLightbulb,
-} from "@fortawesome/free-regular-svg-icons";
 import MobileShuffleCards from "../components/MobileShuffleCards";
 import ShuffleCards from "../components/ShuffleCards";
 import { HoverImageLinks } from "../components/HoverImageLinks";
@@ -106,23 +101,7 @@ const Home = () => {
         <h1 className="text-white font-semibold text-2xl 2xl:text-3xl">
           About
         </h1>
-        <div className="xl:flex xl:flex-row xl:justify-center">
-          <AboutCard
-            icon={faUser}
-            heading="About Me"
-            description="Junior full-stack engineer passionate about turning ideas into code. Specializing in React, TypeScript, and Tailwind on the frontend, with Node.js and Prisma + PostgreSQL on the backend. Also proficient in the MERN stack and other technologies."
-          />
-          <AboutCard
-            icon={faHeart}
-            heading="Education"
-            description="I studied full-stack development at UTSA, focusing on React and Node.js. During the program, I built dynamic web apps and gained hands-on experience with modern frameworks and backend development, finishing strong and learning a lot."
-          />
-          <AboutCard
-            icon={faLightbulb}
-            heading="Problem Solving"
-            description="I thrive on problem-solving, turning complex issues into efficient solutions. Whether it's debugging, optimizing performance, or designing scalable architectures, I enjoy tackling challenges and creating impactful solutions while continuously learning."
-          />
-        </div>
+        <AboutCard />
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
