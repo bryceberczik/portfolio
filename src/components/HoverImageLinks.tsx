@@ -37,7 +37,7 @@ export const HoverImageLinks = () => {
           heading="codeBounty"
           subheading="Freelance development app for web developers"
           imgSrc={codebounty}
-          href="https://codebounty.onrender.com/"
+          href="https://codebounty-production.up.railway.app/"
           link="https://github.com/bryceberczik/codeBounty"
         />
       </div>
