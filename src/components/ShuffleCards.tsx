@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
-import { ICard } from "../interfaces/interfaces";
+import { CardType } from "../types/types";
 import zander from "../images/zander.jpeg";
 import moe from "../images/moe.jpeg";
 import rolando from "../images/rolando.jpeg";
@@ -50,7 +50,7 @@ const Card = ({
   position,
   imgUrl,
   author,
-}: ICard) => {
+}: CardType) => {
   const mousePosRef = useRef(0);
   const onDragStart = (e: any) => {
     mousePosRef.current = e.clientX;
