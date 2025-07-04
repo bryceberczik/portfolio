@@ -150,6 +150,47 @@ const Home = () => {
         {isMobile ? <MobileHoverImageLinks /> : <HoverImageLinks />}
       </motion.div>
 
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
+        id="startup"
+        className="scroll-mt-48 w-full text-center mt-[100px] px-4 sm:px-6 lg:px-8"
+      >
+        <h1 className="text-white font-semibold text-2xl sm:text-3xl lg:text-4xl">
+          Co‑Founder of Byte Club
+        </h1>
+        <p className="text-[whitesmoke] text-base sm:text-lg lg:text-xl mt-4 max-w-2xl mx-auto">
+          While Byte Club is not yet released, it’s my biggest project to date.
+          We’re building a community-driven food review platform where users
+          earn points for sharing photos and insights on their favorite
+          dishes—and redeem those points for gift cards. I lead both the
+          front‑end in React Native/TypeScript and our AI validation agents to
+          ensure authentic, high‑quality content.
+        </p>
+        <a
+          href="https://docs.google.com/presentation/d/YOUR_GOOGLE_SLIDES_ID"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+          inline-block
+          mt-6
+          px-6 py-3
+          text-white
+          text-base sm:text-lg lg:text-sm
+          font-medium
+          rounded-2xl
+          shadow-lg
+          bg-gradient-to-r from-indigo-500 to-purple-600
+          transform hover:scale-105
+          transition-transform transition-colors duration-300 ease-in-out
+          "
+        >
+          View Byte Club Slides
+        </a>
+      </motion.div>
+
       <div className="text-center mt-9">
         <h1 className="text-[whitesmoke] text-lg mb-4">
           Want to see more of my work?
