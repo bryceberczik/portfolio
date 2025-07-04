@@ -46,7 +46,7 @@ const Home = () => {
           transition={{ delay: 0.2 }}
           className="text-white text-lg mt-5 font-semibold"
         >
-          Hey I'm Bryce. 🧑‍💻
+          Hey I'm Bryce Berczik. 🧑‍💻
         </motion.h1>
         <motion.p
           initial={{ y: 100, opacity: 0 }}
@@ -170,7 +170,7 @@ const Home = () => {
           ensure authentic, high‑quality content.
         </p>
         <a
-          href="https://docs.google.com/presentation/d/YOUR_GOOGLE_SLIDES_ID"
+          href="https://docs.google.com/presentation/d/1iOjyOw4eTKpZ7pYSLlNu0btY9SRFsKFRHFo1cMeUjzg/edit?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="

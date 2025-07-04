@@ -4,6 +4,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 import useMeasure from "react-use-measure";
 import ButtonWrapper from "./HeaderButton";
 import { Spin as Hamburger } from 'hamburger-react'
+import logo from "../../public/picsvg_download.svg"
 
 const Example = () => {
   return <GlassNavigation />
@@ -64,7 +65,7 @@ const Cursor = ({ hovered, scope }: any) => {
 
 const Logo = () => (
   <span className="pointer-events-none relative left-0 top-[50%] z-10 text-xl text-white mix-blend-overlay md:absolute md:left-[50%] md:-translate-x-[50%] md:-translate-y-[50%]">
-    Bryce Berczik
+    <img src={logo} width={80} alt="bryce berczik logo" />
   </span>
 );
 
