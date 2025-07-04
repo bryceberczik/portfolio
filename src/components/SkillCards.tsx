@@ -115,7 +115,7 @@ const skills: SkillsType[] = [
     link: "https://reactnative.dev/",
   },
   {
-    name: "QDrant DB",
+    name: "QDrant",
     icon: FaRocket,
     color: "#DC244C",
     link: "https://qdrant.tech/",
