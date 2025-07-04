@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaReact, FaNodeJs } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaRocket } from "react-icons/fa";
 import {
   SiTypescript,
   SiTailwindcss,
@@ -7,29 +7,36 @@ import {
   SiMongodb,
   SiPrisma,
   SiZod,
-  SiGraphql,
   SiPython,
-  SiFramer,
   SiBootstrap,
-  SiReactbootstrap,
   SiLua,
+  SiAerospike,
+  SiAmazonwebservices,
+  SiExpo,
+  SiDocker,
+  SiRedis,
+  SiReact
 } from "react-icons/si";
 
 const skills = [
   { name: "React", icon: FaReact, color: "#58C4DC" },
   { name: "TypeScript", icon: SiTypescript, color: "#2F74C0" },
   { name: "Tailwind", icon: SiTailwindcss, color: "#00BCFF" },
-  { name: "Node.js", icon: FaNodeJs, color: "#58A846" },
+  { name: "Node", icon: FaNodeJs, color: "#58A846" },
   { name: "PostgreSql", icon: SiPostgresql, color: "whitesmoke" },
   { name: "MongoDB", icon: SiMongodb, color: "#17AE55" },
   { name: "Prisma", icon: SiPrisma, color: "#191D3D" },
   { name: "Zod", icon: SiZod, color: "whitesmoke" },
-  { name: "GraphQL", icon: SiGraphql, color: "#E63BAE" },
   { name: "Python", icon: SiPython, color: "#FFCE41" },
   { name: "Bootstrap", icon: SiBootstrap, color: "#8A18FD" },
-  { name: "React BS", icon: SiReactbootstrap, color: "#46E1FE" },
   { name: "Lua", icon: SiLua, color: "#0A0987" },
-  { name: "Framer", icon: SiFramer, color: "black" },
+  { name: "Aerospike", icon: SiAerospike, color: "#F7F410" },
+  { name: "AWS", icon: SiAmazonwebservices, color: "whitesmoke" },
+  { name: "Expo", icon: SiExpo, color: "whitesmoke" },
+  { name: "Docker", icon: SiDocker, color: "#1C63ED" },
+  { name: "Redis", icon: SiRedis, color: "#FF4438" },
+  { name: "React Native", icon: SiReact, color: "#57C4DC" },
+  { name: "QDrant DB", icon: FaRocket, color: "#DC244C" }
 ];
 
 const RenderSkillCards = () => {
