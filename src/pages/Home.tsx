@@ -107,21 +107,23 @@ const Home = () => {
           About
         </h1>
         <div className="xl:flex xl:flex-row xl:justify-center">
-          <AboutCard
-            icon={faUser}
-            heading="About Me"
-            description="Junior full-stack engineer passionate about turning ideas into code. Specializing in React, TypeScript, and Tailwind on the frontend, with Node.js and Prisma + PostgreSQL on the backend. Also proficient in the MERN stack and other technologies."
-          />
-          <AboutCard
-            icon={faHeart}
-            heading="Education"
-            description="I completed a full-stack development Coding Bootcamp at UTSA, focusing on React and Node.js. During the program, I built dynamic web apps and gained hands-on experience with modern frameworks and backend development."
-          />
-          <AboutCard
-            icon={faLightbulb}
-            heading="Problem Solving"
-            description="I thrive on problem-solving, turning complex issues into efficient solutions. Whether it's debugging, optimizing performance, or designing scalable architectures, I enjoy tackling challenges and creating impactful solutions while continuously learning."
-          />
+          <>
+            <AboutCard
+              icon={faUser}
+              heading="About Me"
+              description="Versatile Full‑stack Developer skilled in React, TypeScript, JavaScript, and Python. I build responsive front‑ends and robust back‑end services, integrating AI agents and vector search to create intelligent, user‑centric experiences."
+            />
+            <AboutCard
+              icon={faHeart}
+              heading="Education"
+              description="I completed a full-stack development Coding Bootcamp at UTSA, focusing on React and Node.js. During the program, I built dynamic web apps and gained hands-on experience with modern frameworks and backend development."
+            />
+            <AboutCard
+              icon={faLightbulb}
+              heading="Problem Solving"
+              description="I tackle challenges with an agile mindset, emphasizing testing, security, and automation. From designing scalable architectures to fine‑tuning AI workflows, I iterate continuously to deliver polished, production‑ready software."
+            />
+          </>
         </div>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -146,6 +148,47 @@ const Home = () => {
         </h1>
 
         {isMobile ? <MobileHoverImageLinks /> : <HoverImageLinks />}
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
+        id="startup"
+        className="scroll-mt-48 w-full text-center mt-[100px] px-4 sm:px-6 lg:px-8"
+      >
+        <h1 className="text-white font-semibold text-2xl sm:text-3xl lg:text-4xl">
+          Co‑Founder of Byte Club
+        </h1>
+        <p className="text-[whitesmoke] text-base sm:text-lg lg:text-xl mt-4 max-w-2xl mx-auto">
+          While Byte Club is not yet released, it’s my biggest project to date.
+          We’re building a community-driven food review platform where users
+          earn points for sharing photos and insights on their favorite
+          dishes—and redeem those points for gift cards. I lead both the
+          front‑end in React Native/TypeScript and our AI validation agents to
+          ensure authentic, high‑quality content.
+        </p>
+        <a
+          href="https://docs.google.com/presentation/d/YOUR_GOOGLE_SLIDES_ID"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+          inline-block
+          mt-6
+          px-6 py-3
+          text-white
+          text-base sm:text-lg lg:text-sm
+          font-medium
+          rounded-2xl
+          shadow-lg
+          bg-gradient-to-r from-indigo-500 to-purple-600
+          transform hover:scale-105
+          transition-transform transition-colors duration-300 ease-in-out
+          "
+        >
+          View Byte Club Slides
+        </a>
       </motion.div>
 
       <div className="text-center mt-9">
