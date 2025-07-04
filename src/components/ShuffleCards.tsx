@@ -4,6 +4,7 @@ import { CardType } from "../types/types";
 import zander from "../images/zander.jpeg";
 import moe from "../images/moe.jpeg";
 import rolando from "../images/rolando.jpeg";
+
 const ShuffleCards = () => {
   const [order, setOrder] = useState(["front", "middle", "back"]);
   const handleShuffle = () => {

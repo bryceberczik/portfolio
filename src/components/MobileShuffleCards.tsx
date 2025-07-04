@@ -70,7 +70,8 @@ const Card = ({
   };
 
   const x = position === "front" ? "0%" : position === "middle" ? "15%" : "30%";
-  const rotateZ = position === "front" ? "-3deg" : position === "middle" ? "0deg" : "3deg";
+  const rotateZ =
+    position === "front" ? "-3deg" : position === "middle" ? "0deg" : "3deg";
   const zIndex = position === "front" ? "2" : position === "middle" ? "1" : "0";
 
   const draggable = position === "front";
