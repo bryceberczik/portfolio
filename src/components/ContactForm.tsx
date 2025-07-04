@@ -1,6 +1,8 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, anticipate } from "framer-motion";
 import { useState } from "react";
 import Swal from "sweetalert2";
+
+  const BASE_TRANSITION = { ease: anticipate, duration: 0.75 };
 
 const ShiftingContactForm = () => {
   const [selected, setSelected] = useState("individual");
@@ -225,5 +227,3 @@ const Images = ({ selected }: any) => {
 };
 
 export default ShiftingContactForm;
-
-const BASE_TRANSITION = { ease: "anticipate", duration: 0.75 };
