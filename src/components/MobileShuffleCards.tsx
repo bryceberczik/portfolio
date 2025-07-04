@@ -23,7 +23,7 @@ const MobileShuffleCards = () => {
         <Card
           imgUrl={zander}
           testimonial="After working with Bryce on multiple projects, I’ve been impressed by his skill, reliability, and dedication. He’s a great problem-solver and a valuable team player!"
-          author="Zander K. - Software Engineer @ Coding Bootcamp"
+          author="Zander K. - Software Engineer @ Green Tea Technologies"
           handleShuffle={handleShuffle}
           position={order[0]}
         />
