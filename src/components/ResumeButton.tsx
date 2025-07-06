@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import resume from "../files/Resume.pdf";
+import resume from "../files/Bryce_Berczik_Resume.pdf";
 
 const ResumeButton = () => {
     const handleDownload = () => {

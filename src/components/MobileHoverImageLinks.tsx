@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import stellabyte from "../images/stellabyte.png";
-import digbiai from "../images/digbi.png";
 import pronx from "../images/pronx.png";
 import codebounty from "../images/codebounty.png";
 
@@ -17,13 +16,6 @@ export const MobileHoverImageLinks = () => {
           link="https://github.com/ZVKubajak/Stellabyte"
         />
         <Link
-          heading="Digbi AI"
-          subheading="AI Chatbot that finds patterns in JSON data"
-          imgSrc={digbiai}
-          href="https://digbiai.com"
-          link="https://github.com/bryceberczik/Digbi-AI"
-        />
-        <Link
           heading="pronx."
           subheading="A productivity tool and motivational app"
           imgSrc={pronx}
@@ -31,8 +23,8 @@ export const MobileHoverImageLinks = () => {
           link="https://github.com/bryceberczik/pronx"
         />
         <Link
-          heading="codeBounty"
-          subheading="Freelance development app for web developers"
+          heading="RAG Chatbot"
+          subheading="A vector database–powered chatbot for semantic responses."
           imgSrc={codebounty}
           href="https://codebounty-production.up.railway.app/"
           link="https://github.com/bryceberczik/codeBounty"
