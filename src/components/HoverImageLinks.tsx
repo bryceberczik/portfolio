@@ -1,9 +1,10 @@
 import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { FiArrowRight } from "react-icons/fi";
+import byteclub from "../images/byteclub.png";
 import stellabyte from "../images/stellabyte.png";
-import pronx from "../images/pronx.png";
-import codebounty from "../images/codebounty.png";
+import ragbot from "../images/ragbot.png";
+import projectc from "../images/projectc.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
@@ -12,6 +13,13 @@ export const HoverImageLinks = () => {
     <section className="p-4 md:p-8">
       <div className="mx-auto max-w-5xl">
         <Link
+          heading="Byte Club"
+          subheading="AI-driven food rewards start up"
+          imgSrc={byteclub}
+          href="https://docs.google.com/presentation/d/1iOjyOw4eTKpZ7pYSLlNu0btY9SRFsKFRHFo1cMeUjzg/edit"
+          link=""
+        />
+        <Link
           heading="Stellabyte"
           subheading="Cloud storage with a cosmic twist using AWS"
           imgSrc={stellabyte}
@@ -19,18 +27,18 @@ export const HoverImageLinks = () => {
           link="https://github.com/ZVKubajak/Stellabyte"
         />
         <Link
-          heading="pronx."
-          subheading="A productivity tool and motivational app"
-          imgSrc={pronx}
-          href="https://pronx-p203.onrender.com"
-          link="https://github.com/bryceberczik/pronx"
-        />
-        <Link
           heading="RAG Chatbot"
           subheading="A vector database–powered chatbot for semantic responses."
-          imgSrc={codebounty}
-          href="https://codebounty-production.up.railway.app/"
-          link="https://github.com/bryceberczik/codeBounty"
+          imgSrc={ragbot}
+          href="https://rag-chatbot-production-ffa2.up.railway.app/"
+          link="https://github.com/ZVKubajak/rag-chatbot"
+        />
+        <Link
+          heading="Project C"
+          subheading="My very first app. Used for helping with my finances."
+          imgSrc={projectc}
+          href="https://bryceberczik.github.io/project-c/"
+          link="https://github.com/bryceberczik/project-c"
         />
       </div>
     </section>
@@ -106,15 +114,19 @@ const Link = ({ heading, imgSrc, subheading, href, link }: any) => {
                 </motion.span>
               ))}
             </div>
-            <div
-              className="mb-2 icon-container transition duration-300 ease-in-out"
-              onClick={() => window.open(link, "_blank", "noopener,noreferrer")}
-            >
-              <FontAwesomeIcon
-                className="text-white text-4xl icon-active transition duration-300 ease-in-out"
-                icon={faGithub}
-              />
-            </div>
+            {link === "" ? null : (
+              <div
+                className="mb-2 icon-container transition duration-300 ease-in-out"
+                onClick={() =>
+                  window.open(link, "_blank", "noopener,noreferrer")
+                }
+              >
+                <FontAwesomeIcon
+                  className="text-white text-4xl icon-active transition duration-300 ease-in-out"
+                  icon={faGithub}
+                />
+              </div>
+            )}
           </div>
         </motion.span>
         <span className="relative z-10 mt-4 block text-left text-white transition-colors duration-500 group-hover:text-neutral-50">
