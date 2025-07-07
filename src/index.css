@@ -75,9 +75,9 @@ body {
 }
 
 .icon-container {
-  transition:0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .icon-container:hover .icon-active {
-  font-size: 50px
+  font-size: 50px;
 }

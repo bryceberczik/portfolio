@@ -1,5 +1,5 @@
-import GlassmorphicCard from "./GlassmorphicCard";
 import { AboutType } from "../types/types";
+import GlassmorphicCard from "./GlassmorphicCard";
 
 const AboutCard = ({ heading, description, icon }: AboutType) => {
   return (
@@ -12,7 +12,5 @@ const AboutCard = ({ heading, description, icon }: AboutType) => {
     </div>
   );
 };
-
-
 
 export default AboutCard;

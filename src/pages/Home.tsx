@@ -1,22 +1,25 @@
-import AboutCard from "../components/AboutCard";
-import ProfilePic from "../images/IMG_0240.jpg";
-import MobileShuffleCards from "../components/MobileShuffleCards";
-import ShuffleCards from "../components/ShuffleCards";
-import { HoverImageLinks } from "../components/HoverImageLinks";
 import { useState, useEffect } from "react";
-import { MobileHoverImageLinks } from "../components/MobileHoverImageLinks";
-import RenderSkillCards from "../components/SkillCards";
-import AIButton from "../components/GithubRepoButton";
-import ShiftingContactForm from "../components/ContactForm";
-import Footer from "../components/Footer";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import ResumeButton from "../components/ResumeButton";
+
 import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import {
   faUser,
   faHeart,
   faLightbulb,
 } from "@fortawesome/free-regular-svg-icons";
+
+import ProfilePic from "../images/IMG_0240.jpg";
+
+import AboutCard from "../components/AboutCard";
+import MobileShuffleCards from "../components/MobileShuffleCards";
+import ShuffleCards from "../components/ShuffleCards";
+import HoverImageLinks from "../components/HoverImageLinks";
+import { MobileHoverImageLinks } from "../components/MobileHoverImageLinks";
+import RenderSkillCards from "../components/SkillCards";
+import AIButton from "../components/GithubRepoButton";
+import ShiftingContactForm from "../components/ContactForm";
+import ResumeButton from "../components/ResumeButton";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);

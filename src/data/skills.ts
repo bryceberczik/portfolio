@@ -1,4 +1,4 @@
-import { FaReact, FaNodeJs, FaRocket,  } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaRocket } from "react-icons/fa";
 import {
   SiHtml5,
   SiCss3,
@@ -29,13 +29,13 @@ type SkillsType = {
 };
 
 const skills: SkillsType[] = [
-    {
+  {
     name: "HTML",
     icon: SiHtml5,
     color: "#F16B32",
     link: "https://www.w3schools.com/html/",
   },
-    {
+  {
     name: "CSS",
     icon: SiCss3,
     color: "#3068F0",
@@ -103,7 +103,7 @@ const skills: SkillsType[] = [
     color: "#F7F410",
     link: "https://aerospike.com/",
   },
-    {
+  {
     name: "DigitalOcean",
     icon: SiDigitalocean,
     color: "#0168FF",

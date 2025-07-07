@@ -43,5 +43,4 @@ const RenderSkillCards = () => {
   );
 };
 
-
 export default RenderSkillCards;

@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { LinkProp } from "../types/types";
 
-
 const Link = ({ heading, imgSrc, subheading, href, link }: LinkProp) => {
   const ref = useRef<HTMLAnchorElement>(null);
 

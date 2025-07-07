@@ -2,7 +2,16 @@ import { motion } from "framer-motion";
 
 const AIButton = () => {
   return (
-    <button onClick={() => window.open("https://github.com/bryceberczik?tab=repositories", "_blank", "noopener,noreferrer")} className="text-white font-medium px-3 py-2 rounded-md overflow-hidden relative transition-transform hover:scale-105 active:scale-95">
+    <button
+      onClick={() =>
+        window.open(
+          "https://github.com/bryceberczik?tab=repositories",
+          "_blank",
+          "noopener,noreferrer"
+        )
+      }
+      className="text-white font-medium px-3 py-2 rounded-md overflow-hidden relative transition-transform hover:scale-105 active:scale-95"
+    >
       <span className="relative z-10">Click here</span>
       <motion.div
         initial={{ left: 0 }}

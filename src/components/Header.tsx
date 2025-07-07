@@ -1,10 +1,12 @@
 import { useRef, useState } from "react";
-import { useAnimate, motion } from "framer-motion";
-import { FiArrowUpRight } from "react-icons/fi";
 import useMeasure from "react-use-measure";
-import ButtonWrapper from "./HeaderButton";
+import { useAnimate, motion } from "framer-motion";
+
+import { FiArrowUpRight } from "react-icons/fi";
 import { Spin as Hamburger } from "hamburger-react";
 import logo from "../../public/picsvg_download.svg";
+
+import ButtonWrapper from "./HeaderButton";
 import GlassLink from "./GlassLink";
 
 const Header = () => {

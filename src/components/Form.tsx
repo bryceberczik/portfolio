@@ -1,8 +1,10 @@
 import { useState } from "react";
+
 import { AnimatePresence, motion } from "framer-motion";
 import { BASE_TRANSITION } from "../constants/baseTransition";
 import { FormType } from "../types/types";
 
+import { toast } from "react-toastify";
 import FormSelect from "./FormSelect";
 
 const Form = ({
@@ -30,10 +32,10 @@ const Form = ({
 
     if (data.success) {
       event.target.reset();
-        // ADD ALERT
+      toast("Successfully submitted form!");
     } else {
       console.log("Error", data);
-        // ADD ALERT
+      toast("Something went wrong. Please try again.");
     }
     setIsSubmitting(false);
   };
