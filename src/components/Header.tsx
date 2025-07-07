@@ -17,6 +17,10 @@ const Header = () => {
   const [ref, { height }] = useMeasure();
   const navRef = useRef(null);
 
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <motion.nav
       initial={{ y: -100, opacity: 0 }}
@@ -68,7 +72,12 @@ const Header = () => {
           <ButtonWrapper />
 
           <div className="md:hidden">
-            <Hamburger rounded color="white" onToggle={setMenuOpen} />
+            <Hamburger
+              rounded
+              color="white"
+              toggled={menuOpen}
+              onToggle={setMenuOpen}
+            />
           </div>
         </div>
       </div>
@@ -82,11 +91,19 @@ const Header = () => {
       >
         <div ref={ref} className="flex items-center justify-between px-2 pb-4">
           <div className="flex items-center gap-1">
-            <GlassLink id="about" text="About" />
-            <GlassLink id="projects" text="Projects" />
-            <GlassLink id="skills" text="Skills" />
+            <GlassLink id="about" text="About" onClick={handleLinkClick} />
+            <GlassLink
+              id="projects"
+              text="Projects"
+              onClick={handleLinkClick}
+            />
+            <GlassLink id="skills" text="Skills" onClick={handleLinkClick} />
           </div>
-          <a href="#contact" className="relative mr-4">
+          <a
+            href="#contact"
+            className="relative mr-4"
+            onClick={handleLinkClick}
+          >
             <span className="relative z-10 text-white/90 transition-colors group-hover:text-white">
               Contact
             </span>

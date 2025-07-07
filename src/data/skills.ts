@@ -18,6 +18,7 @@ import {
   SiDocker,
   SiRedis,
   SiReact,
+  SiGit,
 } from "react-icons/si";
 import { IconType } from "react-icons";
 
@@ -89,6 +90,12 @@ const skills: SkillsType[] = [
     icon: SiPython,
     color: "#FFCE41",
     link: "https://www.python.org/",
+  },
+  {
+    name: "Git",
+    icon: SiGit,
+    color: "#F05133",
+    link: "https://git-scm.com/",
   },
   {
     name: "Bootstrap",
