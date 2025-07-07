@@ -1,36 +1,36 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import byteclub from "../images/byteclub.png";
 import stellabyte from "../images/stellabyte.png";
 import ragbot from "../images/ragbot.png";
 import projectc from "../images/projectc.png";
 
+import MobileLink from "./MobileLink";
+
 export const MobileHoverImageLinks = () => {
   return (
     <section className="p-4 md:p-8">
       <div className="mx-auto max-w-5xl">
-        <Link
+        <MobileLink
           heading="Byte Club"
           subheading="AI-driven food rewards start up"
           imgSrc={byteclub}
           href="https://docs.google.com/presentation/d/1iOjyOw4eTKpZ7pYSLlNu0btY9SRFsKFRHFo1cMeUjzg/edit"
           link=""
         />
-        <Link
+        <MobileLink
           heading="Stellabyte"
           subheading="Cloud storage with a cosmic twist using AWS"
           imgSrc={stellabyte}
           href="https://stellabyte-production.up.railway.app"
           link="https://github.com/ZVKubajak/Stellabyte"
         />
-        <Link
+        <MobileLink
           heading="RAG Chatbot"
           subheading="A vector database–powered chatbot for semantic responses."
           imgSrc={ragbot}
           href="https://rag-chatbot-production-ffa2.up.railway.app/"
           link="https://github.com/ZVKubajak/rag-chatbot"
         />
-        <Link
+        <MobileLink
           heading="Project C"
           subheading="My very first app. Used for helping with my finances."
           imgSrc={projectc}
@@ -39,43 +39,5 @@ export const MobileHoverImageLinks = () => {
         />
       </div>
     </section>
-  );
-};
-
-const Link = ({ heading, subheading, href, link }: any) => {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="relative flex items-center justify-between border-b-2 border-white py-4 transition-colors duration-500 hover:border-neutral-50 md:py-8"
-    >
-      <div className="w-full">
-        <span className="relative flex text-4xl items-center gap-5 font-bold text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50 md:text-6xl">
-          <div className="flex items-center justify-between w-full">
-            <div>
-              <h1 className="text-white">{heading}</h1>
-            </div>
-            {link === "" ? null : (
-              <div
-                className="px-3 pb-1 cursor-pointer"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  window.open(link, "_blank", "noopener,noreferrer");
-                }}
-              >
-                <FontAwesomeIcon
-                  className="text-white text-2xl"
-                  icon={faGithub}
-                />
-              </div>
-            )}
-          </div>
-        </span>
-        <span className="relative  mt-4 block text-sm text-left text-white transition-colors duration-500 group-hover:text-neutral-50">
-          {subheading}
-        </span>
-      </div>
-    </a>
   );
 };

@@ -20,3 +20,11 @@ export type FormType = {
   isSwitching?: boolean;
   setIsSwitching: React.Dispatch<React.SetStateAction<boolean>>;
 };
+
+export type LinkProp = {
+  heading: string;
+  imgSrc: string;
+  subheading: string;
+  href: string;
+  link: string;
+};

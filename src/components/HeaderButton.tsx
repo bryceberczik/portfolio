@@ -1,14 +1,15 @@
 const ButtonWrapper = () => {
-  return <GradientShadowButton />;
-};
-
-const GradientShadowButton = () => {
   const handleEmailClick = () => {
     const email = "bryceberczik.dev@gmail.com";
     const subject = encodeURIComponent("Let's Connect!");
-    const body = encodeURIComponent("Hey Bryce, I saw your portfolio and had some thoughts..");
-  
-    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`, "_blank");
+    const body = encodeURIComponent(
+      "Hey Bryce, I saw your portfolio and had some thoughts.."
+    );
+
+    window.open(
+      `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`,
+      "_blank"
+    );
   };
   return (
     <div className="group relative w-fit transition-transform duration-300 active:scale-95">
