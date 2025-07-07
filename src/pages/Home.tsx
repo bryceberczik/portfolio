@@ -62,7 +62,7 @@ const Home = () => {
           transition={{ delay: 0.4 }}
           className="text-white text-xl mt-4 px-3 md:px-16"
         >
-          Focused on building impactful apps and mastering new technologies.
+          Focused on building scalable apps and mastering new technologies.
         </motion.p>
       </div>
       <motion.div
