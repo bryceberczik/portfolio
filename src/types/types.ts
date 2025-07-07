@@ -13,3 +13,10 @@ export type AboutType = {
   description: string;
   icon: IconProp;
 };
+
+export type FormType = {
+  selected: string;
+  setSelected: React.Dispatch<React.SetStateAction<string>>;
+  isSwitching?: boolean;
+  setIsSwitching: React.Dispatch<React.SetStateAction<boolean>>;
+};
