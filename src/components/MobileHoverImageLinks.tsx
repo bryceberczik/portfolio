@@ -15,6 +15,7 @@ export const MobileHoverImageLinks = () => {
           imgSrc={byteclub}
           href="https://docs.google.com/presentation/d/1iOjyOw4eTKpZ7pYSLlNu0btY9SRFsKFRHFo1cMeUjzg/edit"
           link=""
+          technologies={["Aerospike", "Zod", "React Native", "Typescript", "AI", "Digitalocean" ]}
         />
         <MobileLink
           heading="Stellabyte"
@@ -22,6 +23,7 @@ export const MobileHoverImageLinks = () => {
           imgSrc={stellabyte}
           href="https://stellabyte-production.up.railway.app"
           link="https://github.com/ZVKubajak/Stellabyte"
+          technologies={["Typescript", "React", "Prisma", "MongoDB", "Zod", "AWS S3" ]}
         />
         <MobileLink
           heading="RAG Chatbot"
@@ -29,6 +31,7 @@ export const MobileHoverImageLinks = () => {
           imgSrc={ragbot}
           href="https://rag-chatbot-production-ffa2.up.railway.app/"
           link="https://github.com/ZVKubajak/rag-chatbot"
+          technologies={["Typescript", "OpenAI", "Qdrant", "Prisma", "Redis", "MongoDB" ]}
         />
         <MobileLink
           heading="Project C"
@@ -36,6 +39,7 @@ export const MobileHoverImageLinks = () => {
           imgSrc={projectc}
           href="https://bryceberczik.github.io/project-c/"
           link="https://github.com/bryceberczik/project-c"
+          technologies={["HTML", "CSS", "Javascript", "Chart.js"]}
         />
       </div>
     </section>

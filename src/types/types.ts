@@ -27,4 +27,5 @@ export type LinkProp = {
   subheading: string;
   href: string;
   link: string;
+  technologies?: string[]
 };

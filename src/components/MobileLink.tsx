@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { LinkProp } from "../types/types";
 
-const MobileLink = ({ heading, subheading, href, link }: LinkProp) => {
+const MobileLink = ({ heading, subheading, href, link, technologies }: LinkProp) => {
   return (
     <a
       href={href}
@@ -35,6 +35,18 @@ const MobileLink = ({ heading, subheading, href, link }: LinkProp) => {
         <span className="relative  mt-4 block text-sm text-left text-white transition-colors duration-500 group-hover:text-neutral-50">
           {subheading}
         </span>
+        {technologies && technologies.length > 0 && (
+          <div className="relative z-10 mt-3 flex flex-wrap gap-2">
+            {technologies.map((tech, index) => (
+              <span
+                key={index}
+                className="inline-block px-3 py-1 text-xs font-medium text-white/80 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 shadow-lg transition-all duration-300 group-hover:text-white group-hover:bg-white/20 group-hover:border-white/30 group-hover:shadow-xl group-hover:scale-105"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </a>
   );
