@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaMedium, FaLink } from "react-icons/fa";
 import {
   faUser,
   faHeart,
@@ -89,6 +89,22 @@ const Home = () => {
           className="text-[whitesmoke] hover:text-gray-400"
         >
           <FaLinkedin size={40} />
+        </a>
+        <a
+          href="https://medium.com/@bryceberczik.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[whitesmoke] hover:text-gray-400"
+        >
+          <FaMedium size={40} />
+        </a>
+        <a
+          href="https://linktr.ee/bryceberczik"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[whitesmoke] hover:text-gray-400"
+        >
+          <FaLink size={40} />
         </a>
       </motion.div>
       <motion.div

@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaMedium, FaLink } from "react-icons/fa";
 import logo from "../../public/picsvg_download.svg";
 
 const Footer = () => {
@@ -26,6 +26,22 @@ const Footer = () => {
             className="text-[whitesmoke] hover:text-gray-400"
           >
             <FaLinkedin size={24} />
+          </a>
+          <a
+            href="https://medium.com/@bryceberczik.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[whitesmoke] hover:text-gray-400"
+          >
+            <FaMedium size={24} />
+          </a>
+          <a
+            href="https://linktr.ee/bryceberczik"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[whitesmoke] hover:text-gray-400"
+          >
+            <FaLink size={24} />
           </a>
         </div>
       </div>
